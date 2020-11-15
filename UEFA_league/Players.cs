@@ -33,5 +33,16 @@ namespace UEFA_league
             this.teamsTableAdapter.Fill(this.uEFA_leagueDataSet.teams);
 
         }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Do you really want to confirm the changes?", "Changing data", 
+                MessageBoxButtons.YesNo) == DialogResult.Yes) 
+            {
+                teamsBindingSource.EndEdit();
+                teamsTableAdapter.Update(uEFA_leagueDataSet);
+                playersTableAdapter.Update(uEFA_leagueDataSet);
+            }
+        }
     }
 }

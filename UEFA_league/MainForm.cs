@@ -89,5 +89,13 @@ namespace UEFA_league
         {
             saveData();
         }
+
+        private void distributionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var pl = new Players();
+            pl.ShowDialog();
+            playersTableAdapter.Fill(uEFA_leagueDataSet.players);
+            teamsTableAdapter.Fill(uEFA_leagueDataSet.teams);
+        }
     }
 }
