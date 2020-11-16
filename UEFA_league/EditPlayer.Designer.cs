@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.Team_comboBox = new System.Windows.Forms.ComboBox();
+            this.teamsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uEFAleagueDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uEFA_leagueDataSet = new UEFA_league.UEFA_leagueDataSet();
             this.Cancel_button = new System.Windows.Forms.Button();
             this.OK_button = new System.Windows.Forms.Button();
             this.Age_numericUpDown = new System.Windows.Forms.NumericUpDown();
@@ -46,18 +49,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label_salary = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.uEFA_leagueDataSet = new UEFA_league.UEFA_leagueDataSet();
-            this.uEFAleagueDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.teamsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Sal_numeric = new System.Windows.Forms.NumericUpDown();
             this.teamsTableAdapter = new UEFA_league.UEFA_leagueDataSetTableAdapters.teamsTableAdapter();
             this.playersTableAdapter1 = new UEFA_league.UEFA_leagueDataSetTableAdapters.playersTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uEFAleagueDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uEFA_leagueDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Age_numericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Number_numericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uEFA_leagueDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uEFAleagueDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Sal_numeric)).BeginInit();
             this.SuspendLayout();
             // 
             // Team_comboBox
@@ -71,6 +71,21 @@
             this.Team_comboBox.Size = new System.Drawing.Size(197, 28);
             this.Team_comboBox.TabIndex = 37;
             this.Team_comboBox.ValueMember = "team_id";
+            // 
+            // teamsBindingSource
+            // 
+            this.teamsBindingSource.DataMember = "teams";
+            this.teamsBindingSource.DataSource = this.uEFAleagueDataSetBindingSource;
+            // 
+            // uEFAleagueDataSetBindingSource
+            // 
+            this.uEFAleagueDataSetBindingSource.DataSource = this.uEFA_leagueDataSet;
+            this.uEFAleagueDataSetBindingSource.Position = 0;
+            // 
+            // uEFA_leagueDataSet
+            // 
+            this.uEFA_leagueDataSet.DataSetName = "UEFA_leagueDataSet";
+            this.uEFA_leagueDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // Cancel_button
             // 
@@ -92,6 +107,7 @@
             this.OK_button.TabIndex = 35;
             this.OK_button.Text = "OK";
             this.OK_button.UseVisualStyleBackColor = true;
+            this.OK_button.Click += new System.EventHandler(this.OK_button_Click);
             // 
             // Age_numericUpDown
             // 
@@ -243,43 +259,28 @@
             this.label_salary.TabIndex = 38;
             this.label_salary.Text = "Salary";
             // 
-            // numericUpDown1
+            // Sal_numeric
             // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.numericUpDown1.Location = new System.Drawing.Point(204, 300);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.Sal_numeric.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.Sal_numeric.Location = new System.Drawing.Point(204, 300);
+            this.Sal_numeric.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
+            this.Sal_numeric.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 26);
-            this.numericUpDown1.TabIndex = 39;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.Sal_numeric.Name = "Sal_numeric";
+            this.Sal_numeric.Size = new System.Drawing.Size(120, 26);
+            this.Sal_numeric.TabIndex = 39;
+            this.Sal_numeric.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            // 
-            // uEFA_leagueDataSet
-            // 
-            this.uEFA_leagueDataSet.DataSetName = "UEFA_leagueDataSet";
-            this.uEFA_leagueDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // uEFAleagueDataSetBindingSource
-            // 
-            this.uEFAleagueDataSetBindingSource.DataSource = this.uEFA_leagueDataSet;
-            this.uEFAleagueDataSetBindingSource.Position = 0;
-            // 
-            // teamsBindingSource
-            // 
-            this.teamsBindingSource.DataMember = "teams";
-            this.teamsBindingSource.DataSource = this.uEFAleagueDataSetBindingSource;
             // 
             // teamsTableAdapter
             // 
@@ -295,7 +296,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(452, 420);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.Sal_numeric);
             this.Controls.Add(this.label_salary);
             this.Controls.Add(this.Team_comboBox);
             this.Controls.Add(this.Cancel_button);
@@ -316,12 +317,12 @@
             this.Name = "EditPlayer";
             this.Text = "EditPlayer";
             this.Load += new System.EventHandler(this.EditPlayer_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uEFAleagueDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uEFA_leagueDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Age_numericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Number_numericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uEFA_leagueDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uEFAleagueDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Sal_numeric)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -346,7 +347,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label_salary;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown Sal_numeric;
         private System.Windows.Forms.BindingSource uEFAleagueDataSetBindingSource;
         private UEFA_leagueDataSet uEFA_leagueDataSet;
         private System.Windows.Forms.BindingSource teamsBindingSource;

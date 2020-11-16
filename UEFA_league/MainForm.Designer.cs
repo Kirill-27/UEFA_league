@@ -30,12 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.uEFA_leagueDataSet = new UEFA_league.UEFA_leagueDataSet();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.stadiumsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.playersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.playersTableAdapter = new UEFA_league.UEFA_leagueDataSetTableAdapters.playersTableAdapter();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -62,13 +59,13 @@
             this.judgesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lable_table_name = new System.Windows.Forms.Label();
             this.teamsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.teamsTableAdapter = new UEFA_league.UEFA_leagueDataSetTableAdapters.teamsTableAdapter();
             this.matchesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.matchesTableAdapter = new UEFA_league.UEFA_leagueDataSetTableAdapters.matchesTableAdapter();
             this.judgesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.judgesTableAdapter = new UEFA_league.UEFA_leagueDataSetTableAdapters.judgesTableAdapter();
-            this.stadiumsTableAdapter = new UEFA_league.UEFA_leagueDataSetTableAdapters.stadiumsTableAdapter();
             this.queryEditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editFormToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.uEFA_leagueDataSet = new UEFA_league.UEFA_leagueDataSet();
             this.playeridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.playernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,10 +74,13 @@
             this.nationalityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.teamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.salarypermonthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.editFormToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uEFA_leagueDataSet)).BeginInit();
+            this.playersTableAdapter = new UEFA_league.UEFA_leagueDataSetTableAdapters.playersTableAdapter();
+            this.teamsTableAdapter = new UEFA_league.UEFA_leagueDataSetTableAdapters.teamsTableAdapter();
+            this.matchesTableAdapter = new UEFA_league.UEFA_leagueDataSetTableAdapters.matchesTableAdapter();
+            this.judgesTableAdapter = new UEFA_league.UEFA_leagueDataSetTableAdapters.judgesTableAdapter();
+            this.stadiumsTableAdapter = new UEFA_league.UEFA_leagueDataSetTableAdapters.stadiumsTableAdapter();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stadiumsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playersBindingSource)).BeginInit();
@@ -90,17 +90,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.matchesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.judgesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uEFA_leagueDataSet)).BeginInit();
             this.SuspendLayout();
-            // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataSource = this.uEFA_leagueDataSet;
-            this.bindingSource1.Position = 0;
-            // 
-            // uEFA_leagueDataSet
-            // 
-            this.uEFA_leagueDataSet.DataSetName = "UEFA_leagueDataSet";
-            this.uEFA_leagueDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dataGridView1
             // 
@@ -118,6 +110,7 @@
             this.dataGridView1.DataSource = this.playersBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(27, 73);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(709, 253);
             this.dataGridView1.TabIndex = 0;
             // 
@@ -130,10 +123,6 @@
             // 
             this.playersBindingSource.DataMember = "players";
             this.playersBindingSource.DataSource = this.bindingSource1;
-            // 
-            // playersTableAdapter
-            // 
-            this.playersTableAdapter.ClearBeforeFill = true;
             // 
             // bindingNavigator1
             // 
@@ -298,7 +287,7 @@
             // distributionToolStripMenuItem
             // 
             this.distributionToolStripMenuItem.Name = "distributionToolStripMenuItem";
-            this.distributionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.distributionToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.distributionToolStripMenuItem.Text = "Distribution";
             this.distributionToolStripMenuItem.Click += new System.EventHandler(this.distributionToolStripMenuItem_Click);
             // 
@@ -364,38 +353,49 @@
             this.teamsBindingSource.DataMember = "teams";
             this.teamsBindingSource.DataSource = this.bindingSource1;
             // 
-            // teamsTableAdapter
-            // 
-            this.teamsTableAdapter.ClearBeforeFill = true;
-            // 
             // matchesBindingSource
             // 
             this.matchesBindingSource.DataMember = "matches";
             this.matchesBindingSource.DataSource = this.bindingSource1;
-            // 
-            // matchesTableAdapter
-            // 
-            this.matchesTableAdapter.ClearBeforeFill = true;
             // 
             // judgesBindingSource
             // 
             this.judgesBindingSource.DataMember = "judges";
             this.judgesBindingSource.DataSource = this.bindingSource1;
             // 
-            // judgesTableAdapter
-            // 
-            this.judgesTableAdapter.ClearBeforeFill = true;
-            // 
-            // stadiumsTableAdapter
-            // 
-            this.stadiumsTableAdapter.ClearBeforeFill = true;
-            // 
             // queryEditToolStripMenuItem
             // 
             this.queryEditToolStripMenuItem.Name = "queryEditToolStripMenuItem";
-            this.queryEditToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.queryEditToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.queryEditToolStripMenuItem.Text = "Query Edit";
             this.queryEditToolStripMenuItem.Click += new System.EventHandler(this.queryEditToolStripMenuItem_Click);
+            // 
+            // editFormToolStripMenuItem
+            // 
+            this.editFormToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addToolStripMenuItem,
+            this.editToolStripMenuItem,
+            this.deleteToolStripMenuItem});
+            this.editFormToolStripMenuItem.Name = "editFormToolStripMenuItem";
+            this.editFormToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
+            this.editFormToolStripMenuItem.Text = "Edit form";
+            // 
+            // addToolStripMenuItem
+            // 
+            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addToolStripMenuItem.Text = "Add";
+            this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataSource = this.uEFA_leagueDataSet;
+            this.bindingSource1.Position = 0;
+            // 
+            // uEFA_leagueDataSet
+            // 
+            this.uEFA_leagueDataSet.DataSetName = "UEFA_leagueDataSet";
+            this.uEFA_leagueDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // playeridDataGridViewTextBoxColumn
             // 
@@ -445,20 +445,39 @@
             this.salarypermonthDataGridViewTextBoxColumn.HeaderText = "salary_per_month";
             this.salarypermonthDataGridViewTextBoxColumn.Name = "salarypermonthDataGridViewTextBoxColumn";
             // 
-            // editFormToolStripMenuItem
+            // playersTableAdapter
             // 
-            this.editFormToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addToolStripMenuItem});
-            this.editFormToolStripMenuItem.Name = "editFormToolStripMenuItem";
-            this.editFormToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
-            this.editFormToolStripMenuItem.Text = "Edit form";
+            this.playersTableAdapter.ClearBeforeFill = true;
             // 
-            // addToolStripMenuItem
+            // teamsTableAdapter
             // 
-            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.addToolStripMenuItem.Text = "Add";
-            this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
+            this.teamsTableAdapter.ClearBeforeFill = true;
+            // 
+            // matchesTableAdapter
+            // 
+            this.matchesTableAdapter.ClearBeforeFill = true;
+            // 
+            // judgesTableAdapter
+            // 
+            this.judgesTableAdapter.ClearBeforeFill = true;
+            // 
+            // stadiumsTableAdapter
+            // 
+            this.stadiumsTableAdapter.ClearBeforeFill = true;
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -475,8 +494,6 @@
             this.Text = "Main form";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uEFA_leagueDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stadiumsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.playersBindingSource)).EndInit();
@@ -488,6 +505,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.matchesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.judgesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uEFA_leagueDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -544,6 +563,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn salarypermonthDataGridViewTextBoxColumn;
         private System.Windows.Forms.ToolStripMenuItem editFormToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
     }
 }
 

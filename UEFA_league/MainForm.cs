@@ -108,6 +108,52 @@ namespace UEFA_league
         {
             var add = new EditPlayer();
             add.ShowDialog();
+            playersTableAdapter.Fill(uEFA_leagueDataSet.players);
+            uEFA_leagueDataSet.AcceptChanges();
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var st = new UEFA_leagueDataSet.playersDataTable();
+            playersTableAdapter.FillBy(st, 
+                Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value));
+            object[] row = st.Rows[0].ItemArray;
+            var edt = new EditPlayer
+                (Convert.ToInt32(row[0]),
+                row[1].ToString(),
+                row[2].ToString(),
+                Convert.ToInt32(row[3]),
+                Convert.ToInt32(row[4]),
+                row[5].ToString(),
+                Convert.ToInt32(row[6]),
+                Convert.ToInt32(row[7]));
+            edt.ShowDialog();
+            playersTableAdapter.Fill(uEFA_leagueDataSet.players);
+            uEFA_leagueDataSet.AcceptChanges();
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string st = "";
+            for (int i = 0; i < dataGridView1.SelectedRows.Count; ++i)
+            {
+                st += Convert.ToString(dataGridView1.SelectedRows[i].Cells[0].Value);
+                st += " ";
+            }
+            var result = MessageBox.Show(
+                $"Are you sure about deleting rows with id {st}?", 
+                "Confirmation",
+                MessageBoxButtons.YesNo);
+            if (result == DialogResult.No)
+            {
+                return;
+            }
+            for (int i = 0; i < dataGridView1.SelectedRows.Count; ++i)
+            {
+                playersTableAdapter.DeleteQuery(Convert.ToInt32(dataGridView1.SelectedRows[i].Cells[0].Value));
+            }
+            playersTableAdapter.Fill(uEFA_leagueDataSet.players);
+            uEFA_leagueDataSet.AcceptChanges();
         }
     }
 }
