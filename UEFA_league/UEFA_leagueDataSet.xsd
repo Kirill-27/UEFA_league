@@ -218,7 +218,7 @@ SELECT match_id, host_team_id, guest_team_id, judge_id, match_date, host_goals, 
               <Mapping SourceColumn="was_played" DataSetColumn="was_played" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="UEFA_leagueConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="DeleteQuery">
+              <DbSource ConnectionRef="UEFA_leagueConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM matches WHERE [match_id] = @match_id</CommandText>
@@ -239,7 +239,34 @@ WHERE ([match_id] = @match_id);</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="UEFA_leagueConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ScalarQuery" Modifier="Public" Name="ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ScalarQuery">
+              <DbSource ConnectionRef="UEFA_leagueConnectionString (Settings)" DbObjectName="UEFA_league.dbo.matches" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="OrderMatchById" GeneratorSourceName="FillBy1" GetMethodModifier="Public" GetMethodName="OrderMatchById" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="OrderMatchById" UserSourceName="FillBy1">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT match_id, host_team_id, guest_team_id, judge_id, match_date, host_goals, guest_goals, host_yellow_card, guest_yellow_card, stage, weather, attendance, was_played FROM matches
+ORDER BY match_id</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="UEFA_leagueConnectionString (Settings)" DbObjectName="UEFA_league.dbo.matches" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy2" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="OrderByAttendance" GeneratorSourceName="FillBy2" GetMethodModifier="Public" GetMethodName="OrderByAttendance" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="OrderByAttendance" UserSourceName="FillBy2">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT match_id, host_team_id, guest_team_id, judge_id, match_date, host_goals, guest_goals, host_yellow_card, guest_yellow_card, stage, weather, attendance, was_played FROM matches
+ORDER BY attendance DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="UEFA_leagueConnectionString (Settings)" DbObjectName="UEFA_league.dbo.matches" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy3" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="OrderByDate" GeneratorSourceName="FillBy3" GetMethodModifier="Public" GetMethodName="OrderByDate" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="OrderByDate" UserSourceName="FillBy3">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT match_id, host_team_id, guest_team_id, judge_id, match_date, host_goals, guest_goals, host_yellow_card, guest_yellow_card, stage, weather, attendance, was_played FROM matches
+ORDER BY match_date DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="UEFA_leagueConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ScalarQuery" Modifier="Public" Name="ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="ScalarQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT MAX(match_id) FROM matches</CommandText>
@@ -247,7 +274,7 @@ WHERE ([match_id] = @match_id);</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="UEFA_leagueConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="UpdateQuery">
+              <DbSource ConnectionRef="UEFA_leagueConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateQuery">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE matches SET [match_id] = @match_id, [host_team_id] = @host_team_id, [guest_team_id] = @guest_team_id, [judge_id] = @judge_id, [match_date] = @match_date, [host_goals] = @host_goals, [guest_goals] = @guest_goals, [host_yellow_card] = @host_yellow_card, [guest_yellow_card] = @guest_yellow_card, [stage] = @stage, [weather] = @weather, [attendance] = @attendance, [was_played] = @was_played  WHERE (match_id = @match_id)</CommandText>
@@ -601,7 +628,7 @@ SELECT team_id, team_name, stadium_id, date_of_creation, budget, home_uniform, g
   <xs:element name="UEFA_leagueDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="UEFA_leagueDataSet" msprop:Generator_UserDSName="UEFA_leagueDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="judges" msprop:Generator_TableClassName="judgesDataTable" msprop:Generator_TableVarName="tablejudges" msprop:Generator_TablePropName="judges" msprop:Generator_RowDeletingName="judgesRowDeleting" msprop:Generator_RowChangingName="judgesRowChanging" msprop:Generator_RowEvHandlerName="judgesRowChangeEventHandler" msprop:Generator_RowDeletedName="judgesRowDeleted" msprop:Generator_UserTableName="judges" msprop:Generator_RowChangedName="judgesRowChanged" msprop:Generator_RowEvArgName="judgesRowChangeEvent" msprop:Generator_RowClassName="judgesRow">
+        <xs:element name="judges" msprop:Generator_TableClassName="judgesDataTable" msprop:Generator_TableVarName="tablejudges" msprop:Generator_RowChangedName="judgesRowChanged" msprop:Generator_TablePropName="judges" msprop:Generator_RowDeletingName="judgesRowDeleting" msprop:Generator_RowChangingName="judgesRowChanging" msprop:Generator_RowEvHandlerName="judgesRowChangeEventHandler" msprop:Generator_RowDeletedName="judgesRowDeleted" msprop:Generator_RowClassName="judgesRow" msprop:Generator_UserTableName="judges" msprop:Generator_RowEvArgName="judgesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="judge_id" msprop:Generator_ColumnVarNameInTable="columnjudge_id" msprop:Generator_ColumnPropNameInRow="judge_id" msprop:Generator_ColumnPropNameInTable="judge_idColumn" msprop:Generator_UserColumnName="judge_id" type="xs:int" />
@@ -632,7 +659,7 @@ SELECT team_id, team_name, stadium_id, date_of_creation, budget, home_uniform, g
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="matches" msprop:Generator_TableClassName="matchesDataTable" msprop:Generator_TableVarName="tablematches" msprop:Generator_TablePropName="matches" msprop:Generator_RowDeletingName="matchesRowDeleting" msprop:Generator_RowChangingName="matchesRowChanging" msprop:Generator_RowEvHandlerName="matchesRowChangeEventHandler" msprop:Generator_RowDeletedName="matchesRowDeleted" msprop:Generator_UserTableName="matches" msprop:Generator_RowChangedName="matchesRowChanged" msprop:Generator_RowEvArgName="matchesRowChangeEvent" msprop:Generator_RowClassName="matchesRow">
+        <xs:element name="matches" msprop:Generator_TableClassName="matchesDataTable" msprop:Generator_TableVarName="tablematches" msprop:Generator_RowChangedName="matchesRowChanged" msprop:Generator_TablePropName="matches" msprop:Generator_RowDeletingName="matchesRowDeleting" msprop:Generator_RowChangingName="matchesRowChanging" msprop:Generator_RowEvHandlerName="matchesRowChangeEventHandler" msprop:Generator_RowDeletedName="matchesRowDeleted" msprop:Generator_RowClassName="matchesRow" msprop:Generator_UserTableName="matches" msprop:Generator_RowEvArgName="matchesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="match_id" msprop:Generator_ColumnVarNameInTable="columnmatch_id" msprop:Generator_ColumnPropNameInRow="match_id" msprop:Generator_ColumnPropNameInTable="match_idColumn" msprop:Generator_UserColumnName="match_id" type="xs:int" />
@@ -663,7 +690,7 @@ SELECT team_id, team_name, stadium_id, date_of_creation, budget, home_uniform, g
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="players" msprop:Generator_TableClassName="playersDataTable" msprop:Generator_TableVarName="tableplayers" msprop:Generator_TablePropName="players" msprop:Generator_RowDeletingName="playersRowDeleting" msprop:Generator_RowChangingName="playersRowChanging" msprop:Generator_RowEvHandlerName="playersRowChangeEventHandler" msprop:Generator_RowDeletedName="playersRowDeleted" msprop:Generator_UserTableName="players" msprop:Generator_RowChangedName="playersRowChanged" msprop:Generator_RowEvArgName="playersRowChangeEvent" msprop:Generator_RowClassName="playersRow">
+        <xs:element name="players" msprop:Generator_TableClassName="playersDataTable" msprop:Generator_TableVarName="tableplayers" msprop:Generator_RowChangedName="playersRowChanged" msprop:Generator_TablePropName="players" msprop:Generator_RowDeletingName="playersRowDeleting" msprop:Generator_RowChangingName="playersRowChanging" msprop:Generator_RowEvHandlerName="playersRowChangeEventHandler" msprop:Generator_RowDeletedName="playersRowDeleted" msprop:Generator_RowClassName="playersRow" msprop:Generator_UserTableName="players" msprop:Generator_RowEvArgName="playersRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="player_id" msprop:Generator_ColumnVarNameInTable="columnplayer_id" msprop:Generator_ColumnPropNameInRow="player_id" msprop:Generator_ColumnPropNameInTable="player_idColumn" msprop:Generator_UserColumnName="player_id" type="xs:int" />
@@ -695,7 +722,7 @@ SELECT team_id, team_name, stadium_id, date_of_creation, budget, home_uniform, g
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="stadiums" msprop:Generator_TableClassName="stadiumsDataTable" msprop:Generator_TableVarName="tablestadiums" msprop:Generator_TablePropName="stadiums" msprop:Generator_RowDeletingName="stadiumsRowDeleting" msprop:Generator_RowChangingName="stadiumsRowChanging" msprop:Generator_RowEvHandlerName="stadiumsRowChangeEventHandler" msprop:Generator_RowDeletedName="stadiumsRowDeleted" msprop:Generator_UserTableName="stadiums" msprop:Generator_RowChangedName="stadiumsRowChanged" msprop:Generator_RowEvArgName="stadiumsRowChangeEvent" msprop:Generator_RowClassName="stadiumsRow">
+        <xs:element name="stadiums" msprop:Generator_TableClassName="stadiumsDataTable" msprop:Generator_TableVarName="tablestadiums" msprop:Generator_RowChangedName="stadiumsRowChanged" msprop:Generator_TablePropName="stadiums" msprop:Generator_RowDeletingName="stadiumsRowDeleting" msprop:Generator_RowChangingName="stadiumsRowChanging" msprop:Generator_RowEvHandlerName="stadiumsRowChangeEventHandler" msprop:Generator_RowDeletedName="stadiumsRowDeleted" msprop:Generator_RowClassName="stadiumsRow" msprop:Generator_UserTableName="stadiums" msprop:Generator_RowEvArgName="stadiumsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="stadium_id" msprop:Generator_ColumnVarNameInTable="columnstadium_id" msprop:Generator_ColumnPropNameInRow="stadium_id" msprop:Generator_ColumnPropNameInTable="stadium_idColumn" msprop:Generator_UserColumnName="stadium_id" type="xs:int" />
@@ -718,7 +745,7 @@ SELECT team_id, team_name, stadium_id, date_of_creation, budget, home_uniform, g
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="teams" msprop:Generator_TableClassName="teamsDataTable" msprop:Generator_TableVarName="tableteams" msprop:Generator_TablePropName="teams" msprop:Generator_RowDeletingName="teamsRowDeleting" msprop:Generator_RowChangingName="teamsRowChanging" msprop:Generator_RowEvHandlerName="teamsRowChangeEventHandler" msprop:Generator_RowDeletedName="teamsRowDeleted" msprop:Generator_UserTableName="teams" msprop:Generator_RowChangedName="teamsRowChanged" msprop:Generator_RowEvArgName="teamsRowChangeEvent" msprop:Generator_RowClassName="teamsRow">
+        <xs:element name="teams" msprop:Generator_TableClassName="teamsDataTable" msprop:Generator_TableVarName="tableteams" msprop:Generator_RowChangedName="teamsRowChanged" msprop:Generator_TablePropName="teams" msprop:Generator_RowDeletingName="teamsRowDeleting" msprop:Generator_RowChangingName="teamsRowChanging" msprop:Generator_RowEvHandlerName="teamsRowChangeEventHandler" msprop:Generator_RowDeletedName="teamsRowDeleted" msprop:Generator_RowClassName="teamsRow" msprop:Generator_UserTableName="teams" msprop:Generator_RowEvArgName="teamsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="team_id" msprop:Generator_ColumnVarNameInTable="columnteam_id" msprop:Generator_ColumnPropNameInRow="team_id" msprop:Generator_ColumnPropNameInTable="team_idColumn" msprop:Generator_UserColumnName="team_id" type="xs:int" />
@@ -774,11 +801,11 @@ SELECT team_id, team_name, stadium_id, date_of_creation, budget, home_uniform, g
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK__matches__guest_t__1B0907CE" msdata:parent="teams" msdata:child="matches" msdata:parentkey="team_id" msdata:childkey="guest_team_id" msprop:Generator_UserChildTable="matches" msprop:Generator_ChildPropName="GetmatchesRowsByFK__matches__guest_t__1B0907CE" msprop:Generator_UserRelationName="FK__matches__guest_t__1B0907CE" msprop:Generator_RelationVarName="relationFK__matches__guest_t__1B0907CE" msprop:Generator_UserParentTable="teams" msprop:Generator_ParentPropName="teamsRowByFK__matches__guest_t__1B0907CE" />
-      <msdata:Relationship name="FK__matches__host_te__1A14E395" msdata:parent="teams" msdata:child="matches" msdata:parentkey="team_id" msdata:childkey="host_team_id" msprop:Generator_UserChildTable="matches" msprop:Generator_ChildPropName="GetmatchesRowsByFK__matches__host_te__1A14E395" msprop:Generator_UserRelationName="FK__matches__host_te__1A14E395" msprop:Generator_RelationVarName="relationFK__matches__host_te__1A14E395" msprop:Generator_UserParentTable="teams" msprop:Generator_ParentPropName="teamsRowByFK__matches__host_te__1A14E395" />
-      <msdata:Relationship name="FK__matches__judge_i__1BFD2C07" msdata:parent="judges" msdata:child="matches" msdata:parentkey="judge_id" msdata:childkey="judge_id" msprop:Generator_UserChildTable="matches" msprop:Generator_ChildPropName="GetmatchesRows" msprop:Generator_UserRelationName="FK__matches__judge_i__1BFD2C07" msprop:Generator_ParentPropName="judgesRow" msprop:Generator_RelationVarName="relationFK__matches__judge_i__1BFD2C07" msprop:Generator_UserParentTable="judges" />
-      <msdata:Relationship name="FK__players__team__173876EA" msdata:parent="teams" msdata:child="players" msdata:parentkey="team_id" msdata:childkey="team" msprop:Generator_UserChildTable="players" msprop:Generator_ChildPropName="GetplayersRows" msprop:Generator_UserRelationName="FK__players__team__173876EA" msprop:Generator_RelationVarName="relationFK__players__team__173876EA" msprop:Generator_UserParentTable="teams" msprop:Generator_ParentPropName="teamsRow" />
-      <msdata:Relationship name="FK__teams__stadium_i__1273C1CD" msdata:parent="stadiums" msdata:child="teams" msdata:parentkey="stadium_id" msdata:childkey="stadium_id" msprop:Generator_UserChildTable="teams" msprop:Generator_ChildPropName="GetteamsRows" msprop:Generator_UserRelationName="FK__teams__stadium_i__1273C1CD" msprop:Generator_ParentPropName="stadiumsRow" msprop:Generator_RelationVarName="relationFK__teams__stadium_i__1273C1CD" msprop:Generator_UserParentTable="stadiums" />
+      <msdata:Relationship name="FK__matches__guest_t__1B0907CE" msdata:parent="teams" msdata:child="matches" msdata:parentkey="team_id" msdata:childkey="guest_team_id" msprop:Generator_UserChildTable="matches" msprop:Generator_ChildPropName="GetmatchesRowsByFK__matches__guest_t__1B0907CE" msprop:Generator_UserRelationName="FK__matches__guest_t__1B0907CE" msprop:Generator_ParentPropName="teamsRowByFK__matches__guest_t__1B0907CE" msprop:Generator_RelationVarName="relationFK__matches__guest_t__1B0907CE" msprop:Generator_UserParentTable="teams" />
+      <msdata:Relationship name="FK__matches__host_te__1A14E395" msdata:parent="teams" msdata:child="matches" msdata:parentkey="team_id" msdata:childkey="host_team_id" msprop:Generator_UserChildTable="matches" msprop:Generator_ChildPropName="GetmatchesRowsByFK__matches__host_te__1A14E395" msprop:Generator_UserRelationName="FK__matches__host_te__1A14E395" msprop:Generator_ParentPropName="teamsRowByFK__matches__host_te__1A14E395" msprop:Generator_RelationVarName="relationFK__matches__host_te__1A14E395" msprop:Generator_UserParentTable="teams" />
+      <msdata:Relationship name="FK__matches__judge_i__1BFD2C07" msdata:parent="judges" msdata:child="matches" msdata:parentkey="judge_id" msdata:childkey="judge_id" msprop:Generator_UserChildTable="matches" msprop:Generator_ChildPropName="GetmatchesRows" msprop:Generator_UserRelationName="FK__matches__judge_i__1BFD2C07" msprop:Generator_RelationVarName="relationFK__matches__judge_i__1BFD2C07" msprop:Generator_UserParentTable="judges" msprop:Generator_ParentPropName="judgesRow" />
+      <msdata:Relationship name="FK__players__team__173876EA" msdata:parent="teams" msdata:child="players" msdata:parentkey="team_id" msdata:childkey="team" msprop:Generator_UserChildTable="players" msprop:Generator_ChildPropName="GetplayersRows" msprop:Generator_UserRelationName="FK__players__team__173876EA" msprop:Generator_ParentPropName="teamsRow" msprop:Generator_RelationVarName="relationFK__players__team__173876EA" msprop:Generator_UserParentTable="teams" />
+      <msdata:Relationship name="FK__teams__stadium_i__1273C1CD" msdata:parent="stadiums" msdata:child="teams" msdata:parentkey="stadium_id" msdata:childkey="stadium_id" msprop:Generator_UserChildTable="teams" msprop:Generator_ChildPropName="GetteamsRows" msprop:Generator_UserRelationName="FK__teams__stadium_i__1273C1CD" msprop:Generator_RelationVarName="relationFK__teams__stadium_i__1273C1CD" msprop:Generator_UserParentTable="stadiums" msprop:Generator_ParentPropName="stadiumsRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

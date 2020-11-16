@@ -73,9 +73,9 @@
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.byIdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.byTeamAndNumberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bySurnameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.byAgeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lable_table_name = new System.Windows.Forms.Label();
             this.teamsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.matchesBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -442,12 +442,19 @@
             // sortToolStripMenuItem
             // 
             this.sortToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.byAgeToolStripMenuItem,
+            this.byIdToolStripMenuItem,
             this.byTeamAndNumberToolStripMenuItem,
             this.bySurnameToolStripMenuItem});
             this.sortToolStripMenuItem.Name = "sortToolStripMenuItem";
             this.sortToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
             this.sortToolStripMenuItem.Text = "Sort players";
+            // 
+            // byIdToolStripMenuItem
+            // 
+            this.byIdToolStripMenuItem.Name = "byIdToolStripMenuItem";
+            this.byIdToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.byIdToolStripMenuItem.Text = "By id";
+            this.byIdToolStripMenuItem.Click += new System.EventHandler(this.byAgeToolStripMenuItem_Click);
             // 
             // byTeamAndNumberToolStripMenuItem
             // 
@@ -462,13 +469,6 @@
             this.bySurnameToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.bySurnameToolStripMenuItem.Text = "By surname";
             this.bySurnameToolStripMenuItem.Click += new System.EventHandler(this.bySurnameToolStripMenuItem_Click);
-            // 
-            // byAgeToolStripMenuItem
-            // 
-            this.byAgeToolStripMenuItem.Name = "byAgeToolStripMenuItem";
-            this.byAgeToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.byAgeToolStripMenuItem.Text = "By id";
-            this.byAgeToolStripMenuItem.Click += new System.EventHandler(this.byAgeToolStripMenuItem_Click);
             // 
             // lable_table_name
             // 
@@ -604,7 +604,7 @@
         private System.Windows.Forms.ToolStripMenuItem sortToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem byTeamAndNumberToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bySurnameToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem byAgeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem byIdToolStripMenuItem;
     }
 }
 

@@ -60,6 +60,9 @@ namespace UEFA_league
             dataGridView1.DataSource = playersBindingSource; 
             lable_table_name.Text = "Players";
             sortToolStripMenuItem.Text = "Sort players";
+            byIdToolStripMenuItem.Text = "By id";
+            byTeamAndNumberToolStripMenuItem.Text = "By team and number";
+            bySurnameToolStripMenuItem.Text = "By surname";
         }
 
         private void teamsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -82,6 +85,9 @@ namespace UEFA_league
             dataGridView1.DataSource = matchesBindingSource;
             lable_table_name.Text = "Matches";
             sortToolStripMenuItem.Text = "Sort matches";
+            byIdToolStripMenuItem.Text = "By id";
+            byTeamAndNumberToolStripMenuItem.Text = "By attendance";
+            bySurnameToolStripMenuItem.Text = "By date";
         }
 
         private void judgesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -230,6 +236,10 @@ namespace UEFA_league
             {
                 dataGridView1.DataSource = playersTableAdapter.OrderPlayerByTeam();
             }
+            if (lable_table_name.Text == "Matches")
+            {
+                dataGridView1.DataSource = matchesTableAdapter.OrderByAttendance();
+            }
         }
 
         private void byAgeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -238,6 +248,11 @@ namespace UEFA_league
             {
                 dataGridView1.DataSource = playersTableAdapter.OrderPlayerById();
             }
+            if (lable_table_name.Text == "Matches")
+            {
+                dataGridView1.DataSource = matchesTableAdapter.OrderMatchById();
+            }
+
         }
 
         private void bySurnameToolStripMenuItem_Click(object sender, EventArgs e)
@@ -245,6 +260,10 @@ namespace UEFA_league
             if (lable_table_name.Text == "Players")
             {
                 dataGridView1.DataSource = playersTableAdapter.OrderBySurname();
+            }
+            if (lable_table_name.Text == "Matches")
+            {
+                dataGridView1.DataSource = matchesTableAdapter.OrderByDate();
             }
         }
 
