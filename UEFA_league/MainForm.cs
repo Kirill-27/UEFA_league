@@ -97,5 +97,17 @@ namespace UEFA_league
             playersTableAdapter.Fill(uEFA_leagueDataSet.players);
             teamsTableAdapter.Fill(uEFA_leagueDataSet.teams);
         }
+
+        private void queryEditToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var qu = new QueryEdit();
+            qu.ShowDialog();
+        }
+
+        private void addToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var add = new EditPlayer();
+            add.ShowDialog();
+        }
     }
 }
