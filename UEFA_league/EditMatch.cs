@@ -63,7 +63,41 @@ namespace UEFA_league
 
         private void OK_button_Click(object sender, EventArgs e)
         {
+            if (edit)
+            {
+                matchesTableAdapter1.UpdateQuery(id,
+                Convert.ToInt32(host_team_comboBox.SelectedValue),
+                Convert.ToInt32(guest_team_comboBox.SelectedValue),
+                Convert.ToInt32(judge_comboBox.SelectedValue),
+                Convert.ToString(dateTimePicker1.Value),
+                Convert.ToInt32(goal_host_numeric.Value),
+                Convert.ToInt32(goal_gue_numeric.Value),
+                Convert.ToInt32(card_host_numeric.Value),
+                Convert.ToInt32(card_gue_numeric.Value),
+                stage_comboBox.Text,
+                weather_comboBox.Text,
+                Convert.ToInt32(attendance_numeric.Value),
+                Was_played_checkBox.Checked);
+            }
+            else
+            {
+                 matchesTableAdapter1.Insert(
+                 Convert.ToInt32(matchesTableAdapter1.ScalarQuery())+1,
+                 Convert.ToInt32(host_team_comboBox.SelectedValue),
+                 Convert.ToInt32(guest_team_comboBox.SelectedValue),
+                 Convert.ToInt32(judge_comboBox.SelectedValue),
+                 Convert.ToDateTime(dateTimePicker1.Value),
+                 Convert.ToInt32(goal_host_numeric.Value),
+                 Convert.ToInt32(goal_gue_numeric.Value),
+                 Convert.ToInt32(card_host_numeric.Value),
+                 Convert.ToInt32(card_gue_numeric.Value),
+                 stage_comboBox.Text,
+                 weather_comboBox.Text,
+                 Convert.ToInt32(attendance_numeric.Value),
+                 Was_played_checkBox.Checked);
 
+            }
+            Close();
         }
     }
 }

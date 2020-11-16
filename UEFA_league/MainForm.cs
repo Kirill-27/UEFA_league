@@ -117,6 +117,8 @@ namespace UEFA_league
             {
                 var addM = new EditMatch();
                 addM.ShowDialog();
+                matchesTableAdapter.Fill(uEFA_leagueDataSet.matches);
+                uEFA_leagueDataSet.AcceptChanges();
             }
         }
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
@@ -189,6 +191,29 @@ namespace UEFA_league
                     playersTableAdapter.DeleteQuery(Convert.ToInt32(dataGridView1.SelectedRows[i].Cells[0].Value));
                 }
                 playersTableAdapter.Fill(uEFA_leagueDataSet.players);
+                uEFA_leagueDataSet.AcceptChanges();
+            }
+            if (lable_table_name.Text == "Matches")
+            {
+                string st = "";
+                for (int i = 0; i < dataGridView1.SelectedRows.Count; ++i)
+                {
+                    st += Convert.ToString(dataGridView1.SelectedRows[i].Cells[0].Value);
+                    st += " ";
+                }
+                var result = MessageBox.Show(
+                    $"Are you sure about deleting rows with id {st}?",
+                    "Confirmation",
+                    MessageBoxButtons.YesNo);
+                if (result == DialogResult.No)
+                {
+                    return;
+                }
+                for (int i = 0; i < dataGridView1.SelectedRows.Count; ++i)
+                {
+                    matchesTableAdapter.DeleteQuery(Convert.ToInt32(dataGridView1.SelectedRows[i].Cells[0].Value));
+                }
+                matchesTableAdapter.Fill(uEFA_leagueDataSet.matches);
                 uEFA_leagueDataSet.AcceptChanges();
             }
         }

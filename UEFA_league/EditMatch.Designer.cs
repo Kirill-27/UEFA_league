@@ -192,7 +192,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(312, 191);
+            this.label5.Location = new System.Drawing.Point(332, 196);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(57, 18);
             this.label5.TabIndex = 60;
@@ -202,7 +202,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(312, 222);
+            this.label10.Location = new System.Drawing.Point(341, 223);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(46, 18);
             this.label10.TabIndex = 64;

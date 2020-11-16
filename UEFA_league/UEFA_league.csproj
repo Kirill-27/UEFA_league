@@ -78,6 +78,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UEFA_leagueDataSet.cs">
+      <DependentUpon>UEFA_leagueDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="UEFA_leagueDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
