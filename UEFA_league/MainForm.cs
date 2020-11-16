@@ -121,14 +121,14 @@ namespace UEFA_league
         }
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(lable_table_name.Text == "Players")
+            if (lable_table_name.Text == "Players")
             {
                 var st = new UEFA_leagueDataSet.playersDataTable();
                 playersTableAdapter.FillBy(st,
                     Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value));
                 object[] row = st.Rows[0].ItemArray;
-                var edt = new EditPlayer
-                    (Convert.ToInt32(row[0]),
+                var edt = new EditPlayer(
+                    Convert.ToInt32(row[0]),
                     row[1].ToString(),
                     row[2].ToString(),
                     Convert.ToInt32(row[3]),
@@ -138,6 +138,30 @@ namespace UEFA_league
                     Convert.ToInt32(row[7]));
                 edt.ShowDialog();
                 playersTableAdapter.Fill(uEFA_leagueDataSet.players);
+                uEFA_leagueDataSet.AcceptChanges();
+            }
+            if (lable_table_name.Text == "Matches")
+            {
+                var st = new UEFA_leagueDataSet.matchesDataTable();
+                matchesTableAdapter.FillBy(st,
+                    Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value));
+                object[] row = st.Rows[0].ItemArray;
+                var edt = new EditMatch(
+                    Convert.ToInt32(row[0]),
+                    Convert.ToInt32(row[1]),
+                    Convert.ToInt32(row[2]),
+                    Convert.ToInt32(row[3]),
+                    Convert.ToDateTime(row[4]),
+                    Convert.ToInt32(row[5]),
+                    Convert.ToInt32(row[6]),
+                    Convert.ToInt32(row[7]),
+                    Convert.ToInt32(row[8]),
+                    row[9].ToString(),
+                    row[10].ToString(),
+                    Convert.ToInt32(row[11]),
+                    Convert.ToBoolean(row[12]));
+                edt.ShowDialog();
+                matchesTableAdapter.Fill(uEFA_leagueDataSet.matches);
                 uEFA_leagueDataSet.AcceptChanges();
             }
         }
