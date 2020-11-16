@@ -76,6 +76,10 @@
             this.byIdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.byTeamAndNumberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bySurnameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.playersToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.matchesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.judgesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.lable_table_name = new System.Windows.Forms.Label();
             this.teamsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.matchesBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -85,6 +89,7 @@
             this.matchesTableAdapter = new UEFA_league.UEFA_leagueDataSetTableAdapters.matchesTableAdapter();
             this.judgesTableAdapter = new UEFA_league.UEFA_leagueDataSetTableAdapters.judgesTableAdapter();
             this.stadiumsTableAdapter = new UEFA_league.UEFA_leagueDataSetTableAdapters.stadiumsTableAdapter();
+            this.countTeamsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
@@ -112,10 +117,10 @@
             this.teamDataGridViewTextBoxColumn,
             this.salarypermonthDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.playersBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(27, 73);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 82);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(709, 253);
+            this.dataGridView1.Size = new System.Drawing.Size(651, 253);
             this.dataGridView1.TabIndex = 0;
             // 
             // playeridDataGridViewTextBoxColumn
@@ -205,7 +210,7 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem});
-            this.bindingNavigator1.Location = new System.Drawing.Point(27, 329);
+            this.bindingNavigator1.Location = new System.Drawing.Point(12, 338);
             this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.bindingNavigator1.MoveNextItem = this.bindingNavigatorMoveNextItem;
@@ -308,10 +313,12 @@
             this.viewToolStripMenuItem,
             this.databaseToolStripMenuItem,
             this.editFormToolStripMenuItem,
-            this.sortToolStripMenuItem});
+            this.sortToolStripMenuItem,
+            this.searchToolStripMenuItem,
+            this.countTeamsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(771, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(703, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -470,13 +477,42 @@
             this.bySurnameToolStripMenuItem.Text = "By surname";
             this.bySurnameToolStripMenuItem.Click += new System.EventHandler(this.bySurnameToolStripMenuItem_Click);
             // 
+            // searchToolStripMenuItem
+            // 
+            this.searchToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.playersToolStripMenuItem1,
+            this.matchesToolStripMenuItem1,
+            this.judgesToolStripMenuItem1});
+            this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(121, 20);
+            this.searchToolStripMenuItem.Text = "Search and filtering";
+            // 
+            // playersToolStripMenuItem1
+            // 
+            this.playersToolStripMenuItem1.Name = "playersToolStripMenuItem1";
+            this.playersToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.playersToolStripMenuItem1.Text = "Players";
+            this.playersToolStripMenuItem1.Click += new System.EventHandler(this.playersToolStripMenuItem1_Click);
+            // 
+            // matchesToolStripMenuItem1
+            // 
+            this.matchesToolStripMenuItem1.Name = "matchesToolStripMenuItem1";
+            this.matchesToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.matchesToolStripMenuItem1.Text = "Matches";
+            // 
+            // judgesToolStripMenuItem1
+            // 
+            this.judgesToolStripMenuItem1.Name = "judgesToolStripMenuItem1";
+            this.judgesToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.judgesToolStripMenuItem1.Text = "Judges";
+            // 
             // lable_table_name
             // 
             this.lable_table_name.AutoSize = true;
-            this.lable_table_name.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lable_table_name.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lable_table_name.Location = new System.Drawing.Point(23, 46);
             this.lable_table_name.Name = "lable_table_name";
-            this.lable_table_name.Size = new System.Drawing.Size(73, 24);
+            this.lable_table_name.Size = new System.Drawing.Size(80, 24);
             this.lable_table_name.TabIndex = 3;
             this.lable_table_name.Text = "Players";
             // 
@@ -515,12 +551,19 @@
             // 
             this.stadiumsTableAdapter.ClearBeforeFill = true;
             // 
+            // countTeamsToolStripMenuItem
+            // 
+            this.countTeamsToolStripMenuItem.Name = "countTeamsToolStripMenuItem";
+            this.countTeamsToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
+            this.countTeamsToolStripMenuItem.Text = "Count teams";
+            this.countTeamsToolStripMenuItem.Click += new System.EventHandler(this.countTeamsToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(771, 365);
+            this.ClientSize = new System.Drawing.Size(703, 385);
             this.Controls.Add(this.lable_table_name);
             this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.menuStrip1);
@@ -605,6 +648,11 @@
         private System.Windows.Forms.ToolStripMenuItem byTeamAndNumberToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bySurnameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem byIdToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem playersToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem matchesToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem judgesToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem countTeamsToolStripMenuItem;
     }
 }
 

@@ -58,6 +58,12 @@
     <Compile Include="EditPlayer.Designer.cs">
       <DependentUpon>EditPlayer.cs</DependentUpon>
     </Compile>
+    <Compile Include="PlayersSort.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlayersSort.Designer.cs">
+      <DependentUpon>PlayersSort.cs</DependentUpon>
+    </Compile>
     <Compile Include="QueryEdit..cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditPlayer.resx">
       <DependentUpon>EditPlayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayersSort.resx">
+      <DependentUpon>PlayersSort.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QueryEdit..resx">
       <DependentUpon>QueryEdit..cs</DependentUpon>
