@@ -28,62 +28,64 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Sal_numeric = new System.Windows.Forms.NumericUpDown();
+            this.components = new System.ComponentModel.Container();
+            this.attendance_numeric = new System.Windows.Forms.NumericUpDown();
             this.label_salary = new System.Windows.Forms.Label();
             this.Cancel_button = new System.Windows.Forms.Button();
             this.OK_button = new System.Windows.Forms.Button();
             this.Match_id_label = new System.Windows.Forms.Label();
             this.lable1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.host_team_comboBox = new System.Windows.Forms.ComboBox();
+            this.teamsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uEFA_leagueDataSet = new UEFA_league.UEFA_leagueDataSet();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.judge_comboBox = new System.Windows.Forms.ComboBox();
+            this.judgesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label5 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.guest_team_comboBox = new System.Windows.Forms.ComboBox();
+            this.teamsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.goal_host_numeric = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.goal_gue_numeric = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.card_host_numeric = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
+            this.card_gue_numeric = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.stage_comboBox = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.weather_comboBox = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            ((System.ComponentModel.ISupportInitialize)(this.Sal_numeric)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
+            this.Was_played_checkBox = new System.Windows.Forms.CheckBox();
+            this.teamsTableAdapter = new UEFA_league.UEFA_leagueDataSetTableAdapters.teamsTableAdapter();
+            this.judgesTableAdapter = new UEFA_league.UEFA_leagueDataSetTableAdapters.judgesTableAdapter();
+            this.matchesTableAdapter1 = new UEFA_league.UEFA_leagueDataSetTableAdapters.matchesTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.attendance_numeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uEFA_leagueDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.judgesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.goal_host_numeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.goal_gue_numeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.card_host_numeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.card_gue_numeric)).BeginInit();
             this.SuspendLayout();
             // 
-            // Sal_numeric
+            // attendance_numeric
             // 
-            this.Sal_numeric.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Sal_numeric.Location = new System.Drawing.Point(162, 188);
-            this.Sal_numeric.Maximum = new decimal(new int[] {
+            this.attendance_numeric.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.attendance_numeric.Location = new System.Drawing.Point(153, 188);
+            this.attendance_numeric.Maximum = new decimal(new int[] {
             200000,
             0,
             0,
             0});
-            this.Sal_numeric.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.Sal_numeric.Name = "Sal_numeric";
-            this.Sal_numeric.Size = new System.Drawing.Size(120, 26);
-            this.Sal_numeric.TabIndex = 57;
-            this.Sal_numeric.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.attendance_numeric.Name = "attendance_numeric";
+            this.attendance_numeric.Size = new System.Drawing.Size(120, 26);
+            this.attendance_numeric.TabIndex = 57;
             // 
             // label_salary
             // 
@@ -104,6 +106,7 @@
             this.Cancel_button.TabIndex = 54;
             this.Cancel_button.Text = "Cancel";
             this.Cancel_button.UseVisualStyleBackColor = true;
+            this.Cancel_button.Click += new System.EventHandler(this.Cancel_button_Click);
             // 
             // OK_button
             // 
@@ -114,12 +117,13 @@
             this.OK_button.TabIndex = 53;
             this.OK_button.Text = "OK";
             this.OK_button.UseVisualStyleBackColor = true;
+            this.OK_button.Click += new System.EventHandler(this.OK_button_Click);
             // 
             // Match_id_label
             // 
             this.Match_id_label.AutoSize = true;
             this.Match_id_label.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Match_id_label.Location = new System.Drawing.Point(427, 9);
+            this.Match_id_label.Location = new System.Drawing.Point(401, 9);
             this.Match_id_label.Name = "Match_id_label";
             this.Match_id_label.Size = new System.Drawing.Size(15, 18);
             this.Match_id_label.TabIndex = 47;
@@ -135,16 +139,27 @@
             this.lable1.TabIndex = 40;
             this.lable1.Text = "Match_id";
             // 
-            // comboBox1
+            // host_team_comboBox
             // 
-            this.comboBox1.DisplayMember = "team_name";
-            this.comboBox1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(145, 45);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(197, 26);
-            this.comboBox1.TabIndex = 59;
-            this.comboBox1.ValueMember = "team_id";
+            this.host_team_comboBox.DataSource = this.teamsBindingSource;
+            this.host_team_comboBox.DisplayMember = "team_name";
+            this.host_team_comboBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.host_team_comboBox.FormattingEnabled = true;
+            this.host_team_comboBox.Location = new System.Drawing.Point(145, 45);
+            this.host_team_comboBox.Name = "host_team_comboBox";
+            this.host_team_comboBox.Size = new System.Drawing.Size(197, 26);
+            this.host_team_comboBox.TabIndex = 59;
+            this.host_team_comboBox.ValueMember = "team_id";
+            // 
+            // teamsBindingSource
+            // 
+            this.teamsBindingSource.DataMember = "teams";
+            this.teamsBindingSource.DataSource = this.uEFA_leagueDataSet;
+            // 
+            // uEFA_leagueDataSet
+            // 
+            this.uEFA_leagueDataSet.DataSetName = "UEFA_leagueDataSet";
+            this.uEFA_leagueDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -156,16 +171,22 @@
             this.label1.TabIndex = 58;
             this.label1.Text = "Host team";
             // 
-            // comboBox2
+            // judge_comboBox
             // 
-            this.comboBox2.DisplayMember = "team_name";
-            this.comboBox2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(449, 189);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(197, 26);
-            this.comboBox2.TabIndex = 61;
-            this.comboBox2.ValueMember = "team_id";
+            this.judge_comboBox.DataSource = this.judgesBindingSource;
+            this.judge_comboBox.DisplayMember = "full_name";
+            this.judge_comboBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.judge_comboBox.FormattingEnabled = true;
+            this.judge_comboBox.Location = new System.Drawing.Point(449, 189);
+            this.judge_comboBox.Name = "judge_comboBox";
+            this.judge_comboBox.Size = new System.Drawing.Size(197, 26);
+            this.judge_comboBox.TabIndex = 61;
+            this.judge_comboBox.ValueMember = "judge_id";
+            // 
+            // judgesBindingSource
+            // 
+            this.judgesBindingSource.DataMember = "judges";
+            this.judgesBindingSource.DataSource = this.uEFA_leagueDataSet;
             // 
             // label5
             // 
@@ -195,44 +216,40 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(197, 26);
             this.dateTimePicker1.TabIndex = 65;
             // 
-            // comboBox4
+            // guest_team_comboBox
             // 
-            this.comboBox4.DisplayMember = "team_name";
-            this.comboBox4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(480, 45);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(197, 26);
-            this.comboBox4.TabIndex = 67;
-            this.comboBox4.ValueMember = "team_id";
+            this.guest_team_comboBox.DataSource = this.teamsBindingSource1;
+            this.guest_team_comboBox.DisplayMember = "team_name";
+            this.guest_team_comboBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guest_team_comboBox.FormattingEnabled = true;
+            this.guest_team_comboBox.Location = new System.Drawing.Point(480, 45);
+            this.guest_team_comboBox.Name = "guest_team_comboBox";
+            this.guest_team_comboBox.Size = new System.Drawing.Size(197, 26);
+            this.guest_team_comboBox.TabIndex = 67;
+            this.guest_team_comboBox.ValueMember = "team_id";
+            // 
+            // teamsBindingSource1
+            // 
+            this.teamsBindingSource1.DataMember = "teams";
+            this.teamsBindingSource1.DataSource = this.uEFA_leagueDataSet;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(374, 48);
+            this.label2.Location = new System.Drawing.Point(356, 53);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 18);
             this.label2.TabIndex = 66;
             this.label2.Text = "Guest team";
             // 
-            // numericUpDown1
+            // goal_host_numeric
             // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(153, 78);
-            this.numericUpDown1.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 26);
-            this.numericUpDown1.TabIndex = 69;
-            this.numericUpDown1.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.goal_host_numeric.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.goal_host_numeric.Location = new System.Drawing.Point(153, 78);
+            this.goal_host_numeric.Name = "goal_host_numeric";
+            this.goal_host_numeric.Size = new System.Drawing.Size(120, 26);
+            this.goal_host_numeric.TabIndex = 69;
             // 
             // label3
             // 
@@ -244,56 +261,36 @@
             this.label3.TabIndex = 68;
             this.label3.Text = "Host goals";
             // 
-            // numericUpDown2
+            // goal_gue_numeric
             // 
-            this.numericUpDown2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown2.Location = new System.Drawing.Point(526, 77);
-            this.numericUpDown2.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(120, 26);
-            this.numericUpDown2.TabIndex = 71;
-            this.numericUpDown2.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.goal_gue_numeric.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.goal_gue_numeric.Location = new System.Drawing.Point(557, 77);
+            this.goal_gue_numeric.Name = "goal_gue_numeric";
+            this.goal_gue_numeric.Size = new System.Drawing.Size(120, 26);
+            this.goal_gue_numeric.TabIndex = 71;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(389, 79);
+            this.label4.Location = new System.Drawing.Point(356, 85);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(103, 18);
             this.label4.TabIndex = 70;
             this.label4.Text = "Guest goals";
             // 
-            // numericUpDown3
+            // card_host_numeric
             // 
-            this.numericUpDown3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown3.Location = new System.Drawing.Point(153, 110);
-            this.numericUpDown3.Maximum = new decimal(new int[] {
+            this.card_host_numeric.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.card_host_numeric.Location = new System.Drawing.Point(153, 110);
+            this.card_host_numeric.Maximum = new decimal(new int[] {
             30,
             0,
             0,
             0});
-            this.numericUpDown3.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(120, 26);
-            this.numericUpDown3.TabIndex = 73;
-            this.numericUpDown3.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.card_host_numeric.Name = "card_host_numeric";
+            this.card_host_numeric.Size = new System.Drawing.Size(120, 26);
+            this.card_host_numeric.TabIndex = 73;
             // 
             // label6
             // 
@@ -305,34 +302,24 @@
             this.label6.TabIndex = 72;
             this.label6.Text = "Host yellow card";
             // 
-            // numericUpDown4
+            // card_gue_numeric
             // 
-            this.numericUpDown4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown4.Location = new System.Drawing.Point(526, 110);
-            this.numericUpDown4.Maximum = new decimal(new int[] {
+            this.card_gue_numeric.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.card_gue_numeric.Location = new System.Drawing.Point(558, 110);
+            this.card_gue_numeric.Maximum = new decimal(new int[] {
             30,
             0,
             0,
             0});
-            this.numericUpDown4.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(120, 26);
-            this.numericUpDown4.TabIndex = 75;
-            this.numericUpDown4.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.card_gue_numeric.Name = "card_gue_numeric";
+            this.card_gue_numeric.Size = new System.Drawing.Size(120, 26);
+            this.card_gue_numeric.TabIndex = 75;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(341, 112);
+            this.label7.Location = new System.Drawing.Point(356, 114);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(151, 18);
             this.label7.TabIndex = 74;
@@ -363,16 +350,14 @@
             this.stage_comboBox.Size = new System.Drawing.Size(129, 26);
             this.stage_comboBox.TabIndex = 77;
             // 
-            // comboBox5
+            // weather_comboBox
             // 
-            this.comboBox5.DisplayMember = "team_name";
-            this.comboBox5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(153, 252);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(129, 26);
-            this.comboBox5.TabIndex = 79;
-            this.comboBox5.ValueMember = "team_id";
+            this.weather_comboBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.weather_comboBox.FormattingEnabled = true;
+            this.weather_comboBox.Location = new System.Drawing.Point(153, 252);
+            this.weather_comboBox.Name = "weather_comboBox";
+            this.weather_comboBox.Size = new System.Drawing.Size(129, 26);
+            this.weather_comboBox.TabIndex = 79;
             // 
             // label9
             // 
@@ -384,16 +369,28 @@
             this.label9.TabIndex = 78;
             this.label9.Text = "Weather";
             // 
-            // checkBox1
+            // Was_played_checkBox
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.checkBox1.Location = new System.Drawing.Point(453, 256);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(118, 22);
-            this.checkBox1.TabIndex = 80;
-            this.checkBox1.Text = "Was played";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.Was_played_checkBox.AutoSize = true;
+            this.Was_played_checkBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.Was_played_checkBox.Location = new System.Drawing.Point(453, 256);
+            this.Was_played_checkBox.Name = "Was_played_checkBox";
+            this.Was_played_checkBox.Size = new System.Drawing.Size(118, 22);
+            this.Was_played_checkBox.TabIndex = 80;
+            this.Was_played_checkBox.Text = "Was played";
+            this.Was_played_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // teamsTableAdapter
+            // 
+            this.teamsTableAdapter.ClearBeforeFill = true;
+            // 
+            // judgesTableAdapter
+            // 
+            this.judgesTableAdapter.ClearBeforeFill = true;
+            // 
+            // matchesTableAdapter1
+            // 
+            this.matchesTableAdapter1.ClearBeforeFill = true;
             // 
             // EditMatch
             // 
@@ -401,28 +398,28 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(690, 351);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.comboBox5);
+            this.Controls.Add(this.Was_played_checkBox);
+            this.Controls.Add(this.weather_comboBox);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.stage_comboBox);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.numericUpDown4);
+            this.Controls.Add(this.card_gue_numeric);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.numericUpDown3);
+            this.Controls.Add(this.card_host_numeric);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.numericUpDown2);
+            this.Controls.Add(this.goal_gue_numeric);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.goal_host_numeric);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox4);
+            this.Controls.Add(this.guest_team_comboBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.judge_comboBox);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.host_team_comboBox);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Sal_numeric);
+            this.Controls.Add(this.attendance_numeric);
             this.Controls.Add(this.label_salary);
             this.Controls.Add(this.Cancel_button);
             this.Controls.Add(this.OK_button);
@@ -430,11 +427,16 @@
             this.Controls.Add(this.lable1);
             this.Name = "EditMatch";
             this.Text = "EditMatch";
-            ((System.ComponentModel.ISupportInitialize)(this.Sal_numeric)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
+            this.Load += new System.EventHandler(this.EditMatch_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.attendance_numeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uEFA_leagueDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.judgesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.goal_host_numeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.goal_gue_numeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.card_host_numeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.card_gue_numeric)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -442,32 +444,39 @@
 
         #endregion
 
-        private System.Windows.Forms.NumericUpDown Sal_numeric;
+        private System.Windows.Forms.NumericUpDown attendance_numeric;
         private System.Windows.Forms.Label label_salary;
         private System.Windows.Forms.Button Cancel_button;
         private System.Windows.Forms.Button OK_button;
         private System.Windows.Forms.Label Match_id_label;
         private System.Windows.Forms.Label lable1;
-        public System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        public System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown goal_host_numeric;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown goal_gue_numeric;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.NumericUpDown card_host_numeric;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.NumericUpDown numericUpDown4;
+        private System.Windows.Forms.NumericUpDown card_gue_numeric;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        public System.Windows.Forms.ComboBox stage_comboBox;
-        public System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox Was_played_checkBox;
+        private System.Windows.Forms.ComboBox host_team_comboBox;
+        private System.Windows.Forms.ComboBox judge_comboBox;
+        private System.Windows.Forms.ComboBox guest_team_comboBox;
+        private System.Windows.Forms.ComboBox stage_comboBox;
+        private System.Windows.Forms.ComboBox weather_comboBox;
+        private UEFA_leagueDataSet uEFA_leagueDataSet;
+        private System.Windows.Forms.BindingSource teamsBindingSource;
+        private UEFA_leagueDataSetTableAdapters.teamsTableAdapter teamsTableAdapter;
+        private System.Windows.Forms.BindingSource judgesBindingSource;
+        private UEFA_leagueDataSetTableAdapters.judgesTableAdapter judgesTableAdapter;
+        private System.Windows.Forms.BindingSource teamsBindingSource1;
+        private UEFA_leagueDataSetTableAdapters.matchesTableAdapter matchesTableAdapter1;
     }
 }

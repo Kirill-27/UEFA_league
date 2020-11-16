@@ -316,7 +316,6 @@
             this.Controls.Add(this.label1);
             this.Name = "EditPlayer";
             this.Text = "EditPlayer";
-            this.Load += new System.EventHandler(this.EditPlayer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uEFAleagueDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uEFA_leagueDataSet)).EndInit();
@@ -329,8 +328,6 @@
         }
 
         #endregion
-
-        public System.Windows.Forms.ComboBox Team_comboBox;
         private System.Windows.Forms.Button Cancel_button;
         private System.Windows.Forms.Button OK_button;
         private System.Windows.Forms.NumericUpDown Age_numericUpDown;
@@ -353,5 +350,6 @@
         private System.Windows.Forms.BindingSource teamsBindingSource;
         private UEFA_leagueDataSetTableAdapters.teamsTableAdapter teamsTableAdapter;
         private UEFA_leagueDataSetTableAdapters.playersTableAdapter playersTableAdapter1;
+        private System.Windows.Forms.ComboBox Team_comboBox;
     }
 }

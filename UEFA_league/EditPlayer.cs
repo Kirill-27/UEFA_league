@@ -43,10 +43,6 @@ namespace UEFA_league
             Nationality_textBox.Text = nationality;
             Sal_numeric.Value = salary;
         }
-        private void EditPlayer_Load(object sender, EventArgs e)
-        {
-            
-        }
 
         private void Cancel_button_Click(object sender, EventArgs e)
         {
