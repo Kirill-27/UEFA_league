@@ -354,6 +354,11 @@
             // 
             this.weather_comboBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.weather_comboBox.FormattingEnabled = true;
+            this.weather_comboBox.Items.AddRange(new object[] {
+            "Good",
+            "Snow",
+            "Rain",
+            "Thunderstorm rain"});
             this.weather_comboBox.Location = new System.Drawing.Point(153, 252);
             this.weather_comboBox.Name = "weather_comboBox";
             this.weather_comboBox.Size = new System.Drawing.Size(129, 26);

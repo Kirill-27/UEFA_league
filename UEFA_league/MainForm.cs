@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace UEFA_league
 {
     public partial class MainForm : Form
     {
+        const string ConnectionString = @"Data Source = 
+        KIRILL_COMP\SQLEXPRESS;Initial Catalog = 
+        UEFA_league; Integrated Security = True";
         private void saveData()
         {
             stadiumsTableAdapter.Update(uEFA_leagueDataSet);
@@ -55,6 +59,7 @@ namespace UEFA_league
             bindingNavigator1.BindingSource = playersBindingSource; 
             dataGridView1.DataSource = playersBindingSource; 
             lable_table_name.Text = "Players";
+            sortToolStripMenuItem.Text = "Sort players";
         }
 
         private void teamsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -76,6 +81,7 @@ namespace UEFA_league
             bindingNavigator1.BindingSource = matchesBindingSource;
             dataGridView1.DataSource = matchesBindingSource;
             lable_table_name.Text = "Matches";
+            sortToolStripMenuItem.Text = "Sort matches";
         }
 
         private void judgesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -217,5 +223,31 @@ namespace UEFA_league
                 uEFA_leagueDataSet.AcceptChanges();
             }
         }
+
+        private void byTeamAndNumberToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (lable_table_name.Text == "Players")
+            {
+                dataGridView1.DataSource = playersTableAdapter.OrderPlayerByTeam();
+            }
+        }
+
+        private void byAgeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (lable_table_name.Text == "Players")
+            {
+                dataGridView1.DataSource = playersTableAdapter.OrderPlayerById();
+            }
+        }
+
+        private void bySurnameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (lable_table_name.Text == "Players")
+            {
+                dataGridView1.DataSource = playersTableAdapter.OrderBySurname();
+            }
+        }
+
+        
     }
 }
