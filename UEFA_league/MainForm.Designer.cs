@@ -83,7 +83,8 @@
             this.filter2_button = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.SearchTextbox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.search1_but = new System.Windows.Forms.Button();
+            this.search2_but = new System.Windows.Forms.Button();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.uEFA_leagueDataSet = new UEFA_league.UEFA_leagueDataSet();
             this.playeridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -99,7 +100,7 @@
             this.matchesTableAdapter = new UEFA_league.UEFA_leagueDataSetTableAdapters.matchesTableAdapter();
             this.judgesTableAdapter = new UEFA_league.UEFA_leagueDataSetTableAdapters.judgesTableAdapter();
             this.stadiumsTableAdapter = new UEFA_league.UEFA_leagueDataSetTableAdapters.stadiumsTableAdapter();
-            this.button2 = new System.Windows.Forms.Button();
+            this.search3_but = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stadiumsBindingSource)).BeginInit();
@@ -334,35 +335,35 @@
             // playersToolStripMenuItem
             // 
             this.playersToolStripMenuItem.Name = "playersToolStripMenuItem";
-            this.playersToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.playersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.playersToolStripMenuItem.Text = "Players";
             this.playersToolStripMenuItem.Click += new System.EventHandler(this.playersToolStripMenuItem_Click);
             // 
             // teamsToolStripMenuItem
             // 
             this.teamsToolStripMenuItem.Name = "teamsToolStripMenuItem";
-            this.teamsToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.teamsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.teamsToolStripMenuItem.Text = "Teams";
             this.teamsToolStripMenuItem.Click += new System.EventHandler(this.teamsToolStripMenuItem_Click);
             // 
             // stadiumsToolStripMenuItem
             // 
             this.stadiumsToolStripMenuItem.Name = "stadiumsToolStripMenuItem";
-            this.stadiumsToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.stadiumsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.stadiumsToolStripMenuItem.Text = "Stadiums";
             this.stadiumsToolStripMenuItem.Click += new System.EventHandler(this.stadiumsToolStripMenuItem_Click);
             // 
             // matchesToolStripMenuItem
             // 
             this.matchesToolStripMenuItem.Name = "matchesToolStripMenuItem";
-            this.matchesToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.matchesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.matchesToolStripMenuItem.Text = "Matches";
             this.matchesToolStripMenuItem.Click += new System.EventHandler(this.matchesToolStripMenuItem_Click);
             // 
             // judgesToolStripMenuItem
             // 
             this.judgesToolStripMenuItem.Name = "judgesToolStripMenuItem";
-            this.judgesToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.judgesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.judgesToolStripMenuItem.Text = "Judges";
             this.judgesToolStripMenuItem.Click += new System.EventHandler(this.judgesToolStripMenuItem_Click);
             // 
@@ -529,7 +530,7 @@
             // 
             // filter1_button
             // 
-            this.filter1_button.Location = new System.Drawing.Point(769, 256);
+            this.filter1_button.Location = new System.Drawing.Point(687, 265);
             this.filter1_button.Name = "filter1_button";
             this.filter1_button.Size = new System.Drawing.Size(75, 23);
             this.filter1_button.TabIndex = 10;
@@ -539,7 +540,7 @@
             // 
             // filter2_button
             // 
-            this.filter2_button.Location = new System.Drawing.Point(688, 256);
+            this.filter2_button.Location = new System.Drawing.Point(769, 265);
             this.filter2_button.Name = "filter2_button";
             this.filter2_button.Size = new System.Drawing.Size(75, 23);
             this.filter2_button.TabIndex = 15;
@@ -564,15 +565,25 @@
             this.SearchTextbox.Size = new System.Drawing.Size(132, 20);
             this.SearchTextbox.TabIndex = 17;
             // 
-            // button1
+            // search1_but
             // 
-            this.button1.Location = new System.Drawing.Point(687, 82);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Surname";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.search1_but.Location = new System.Drawing.Point(687, 82);
+            this.search1_but.Name = "search1_but";
+            this.search1_but.Size = new System.Drawing.Size(75, 23);
+            this.search1_but.TabIndex = 18;
+            this.search1_but.Text = "Surname";
+            this.search1_but.UseVisualStyleBackColor = true;
+            this.search1_but.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // search2_but
+            // 
+            this.search2_but.Location = new System.Drawing.Point(769, 82);
+            this.search2_but.Name = "search2_but";
+            this.search2_but.Size = new System.Drawing.Size(75, 23);
+            this.search2_but.TabIndex = 19;
+            this.search2_but.Text = "Number";
+            this.search2_but.UseVisualStyleBackColor = true;
+            this.search2_but.Click += new System.EventHandler(this.button2_Click);
             // 
             // bindingSource1
             // 
@@ -652,15 +663,15 @@
             // 
             this.stadiumsTableAdapter.ClearBeforeFill = true;
             // 
-            // button2
+            // search3_but
             // 
-            this.button2.Location = new System.Drawing.Point(769, 82);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "Numer";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.search3_but.Location = new System.Drawing.Point(850, 82);
+            this.search3_but.Name = "search3_but";
+            this.search3_but.Size = new System.Drawing.Size(99, 23);
+            this.search3_but.TabIndex = 20;
+            this.search3_but.Text = "By all text fields";
+            this.search3_but.UseVisualStyleBackColor = true;
+            this.search3_but.Click += new System.EventHandler(this.button3_Click);
             // 
             // MainForm
             // 
@@ -668,8 +679,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(984, 385);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.search3_but);
+            this.Controls.Add(this.search2_but);
+            this.Controls.Add(this.search1_but);
             this.Controls.Add(this.SearchTextbox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.filter2_button);
@@ -776,8 +788,9 @@
         private System.Windows.Forms.Button filter2_button;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox SearchTextbox;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button search1_but;
+        private System.Windows.Forms.Button search2_but;
+        private System.Windows.Forms.Button search3_but;
     }
 }
 
