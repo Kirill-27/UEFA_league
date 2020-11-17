@@ -305,15 +305,18 @@ namespace UEFA_league
         {
             if (lable_table_name.Text == "Players")
             {
-                dataGridView1.DataSource = playersTableAdapter.OrderPlayerById();
+                dataGridView1.DataSource = playersBindingSource;
+                bindingNavigator1.BindingSource = playersBindingSource;
             }
             if (lable_table_name.Text == "Matches")
             {
-                dataGridView1.DataSource = matchesTableAdapter.OrderMatchById();
+                dataGridView1.DataSource = matchesBindingSource;
+                bindingNavigator1.BindingSource = matchesBindingSource;
             }
             if (lable_table_name.Text == "Judges")
             {
-                dataGridView1.DataSource = judgesTableAdapter.OrderJudgesById();
+                dataGridView1.DataSource = judgesBindingSource;
+                bindingNavigator1.BindingSource = judgesBindingSource;
             }
 
         }
@@ -340,9 +343,65 @@ namespace UEFA_league
             sortP.ShowDialog();
         }
 
-        private void editFormToolStripMenuItem_Click(object sender, EventArgs e)
+        private void matchesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            dataGridView1.DataSource = playersTableAdapter.FilterAge(28, 36);
+        }
 
+        private void filter1_button_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int f1 = Convert.ToInt32(filter_st1.Text),
+                f2 = Convert.ToInt32(filter_fn1.Text);
+                dataGridView1.DataSource = playersTableAdapter.FilterAge(f1, f2);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(@"Error: " + ex.Message);
+            }
+        }
+
+        private void filter2_button_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int f1 = Convert.ToInt32(filter_st1.Text),
+                f2 = Convert.ToInt32(filter_fn1.Text);
+                dataGridView1.DataSource = playersTableAdapter.SalaryFilter(f1, f2);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(@"Error: " + ex.Message);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string r = "%";
+                r += SearchTextbox.Text;
+                r += "%";
+                dataGridView1.DataSource = playersTableAdapter.SurnameSeatch(r);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(@"Error: " + ex.Message);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                dataGridView1.DataSource = 
+                    playersTableAdapter.NumberSearch(Convert.ToInt32(SearchTextbox.Text));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(@"Error: " + ex.Message);
+            }
         }
     }
 }
