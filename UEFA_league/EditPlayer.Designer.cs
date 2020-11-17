@@ -71,6 +71,7 @@
             this.Team_comboBox.Size = new System.Drawing.Size(197, 28);
             this.Team_comboBox.TabIndex = 37;
             this.Team_comboBox.ValueMember = "team_id";
+            this.Team_comboBox.SelectedIndexChanged += new System.EventHandler(this.Team_comboBox_SelectedIndexChanged);
             // 
             // teamsBindingSource
             // 
@@ -126,6 +127,7 @@
             0,
             0,
             0});
+            this.Age_numericUpDown.ValueChanged += new System.EventHandler(this.Age_numericUpDown_ValueChanged);
             // 
             // Number_numericUpDown
             // 
@@ -144,6 +146,7 @@
             0,
             0,
             0});
+            this.Number_numericUpDown.ValueChanged += new System.EventHandler(this.Number_numericUpDown_ValueChanged);
             // 
             // Nationality_textBox
             // 
@@ -152,6 +155,7 @@
             this.Nationality_textBox.Name = "Nationality_textBox";
             this.Nationality_textBox.Size = new System.Drawing.Size(197, 26);
             this.Nationality_textBox.TabIndex = 32;
+            this.Nationality_textBox.TextChanged += new System.EventHandler(this.Nationality_textBox_TextChanged);
             // 
             // Surname_textBox
             // 
@@ -160,6 +164,7 @@
             this.Surname_textBox.Name = "Surname_textBox";
             this.Surname_textBox.Size = new System.Drawing.Size(197, 26);
             this.Surname_textBox.TabIndex = 31;
+            this.Surname_textBox.TextChanged += new System.EventHandler(this.Surname_textBox_TextChanged);
             // 
             // Name_textBox
             // 
@@ -168,6 +173,7 @@
             this.Name_textBox.Name = "Name_textBox";
             this.Name_textBox.Size = new System.Drawing.Size(197, 26);
             this.Name_textBox.TabIndex = 30;
+            this.Name_textBox.TextChanged += new System.EventHandler(this.Name_textBox_TextChanged);
             // 
             // player_id_label
             // 
@@ -178,6 +184,7 @@
             this.player_id_label.Size = new System.Drawing.Size(15, 20);
             this.player_id_label.TabIndex = 29;
             this.player_id_label.Text = "*";
+            this.player_id_label.Click += new System.EventHandler(this.player_id_label_Click);
             // 
             // label6
             // 
@@ -188,6 +195,7 @@
             this.label6.Size = new System.Drawing.Size(52, 18);
             this.label6.TabIndex = 28;
             this.label6.Text = "Team";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
@@ -198,6 +206,7 @@
             this.label7.Size = new System.Drawing.Size(93, 18);
             this.label7.TabIndex = 27;
             this.label7.Text = "Nationality";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
@@ -208,6 +217,7 @@
             this.label8.Size = new System.Drawing.Size(40, 18);
             this.label8.TabIndex = 26;
             this.label8.Text = "Age";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label3
             // 
@@ -218,6 +228,7 @@
             this.label3.Size = new System.Drawing.Size(71, 18);
             this.label3.TabIndex = 25;
             this.label3.Text = "Number";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -228,6 +239,7 @@
             this.label4.Size = new System.Drawing.Size(80, 18);
             this.label4.TabIndex = 24;
             this.label4.Text = "Surname";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label2
             // 
@@ -238,6 +250,7 @@
             this.label2.Size = new System.Drawing.Size(54, 18);
             this.label2.TabIndex = 23;
             this.label2.Text = "Name";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -248,6 +261,7 @@
             this.label1.Size = new System.Drawing.Size(81, 18);
             this.label1.TabIndex = 22;
             this.label1.Text = "Player_id";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label_salary
             // 
@@ -258,6 +272,7 @@
             this.label_salary.Size = new System.Drawing.Size(59, 18);
             this.label_salary.TabIndex = 38;
             this.label_salary.Text = "Salary";
+            this.label_salary.Click += new System.EventHandler(this.label_salary_Click);
             // 
             // Sal_numeric
             // 
@@ -281,6 +296,7 @@
             0,
             0,
             0});
+            this.Sal_numeric.ValueChanged += new System.EventHandler(this.Sal_numeric_ValueChanged);
             // 
             // teamsTableAdapter
             // 

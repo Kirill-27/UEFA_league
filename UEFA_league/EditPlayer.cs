@@ -76,5 +76,85 @@ namespace UEFA_league
             }
             Close();
         }
+
+        private void label_salary_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Team_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Sal_numeric_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Age_numericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Number_numericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Nationality_textBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Surname_textBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Name_textBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void player_id_label_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

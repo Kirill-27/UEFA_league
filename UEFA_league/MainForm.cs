@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using UEFA_league.Forms;
 
 namespace UEFA_league
 {
     public partial class MainForm : Form
     {
+
         const string ConnectionString = @"Data Source = 
         KIRILL_COMP\SQLEXPRESS;Initial Catalog = 
         UEFA_league; Integrated Security = True";
@@ -24,6 +26,7 @@ namespace UEFA_league
             playersTableAdapter.Update(uEFA_leagueDataSet);
             matchesTableAdapter.Update(uEFA_leagueDataSet);
         }
+       
         public MainForm()
         {
             InitializeComponent();
@@ -132,6 +135,13 @@ namespace UEFA_league
                 matchesTableAdapter.Fill(uEFA_leagueDataSet.matches);
                 uEFA_leagueDataSet.AcceptChanges();
             }
+            if (lable_table_name.Text == "Judges")
+            {
+                var addJ = new EditJudge();
+                addJ.ShowDialog();
+                judgesTableAdapter.Fill(uEFA_leagueDataSet.judges);
+                uEFA_leagueDataSet.AcceptChanges();
+            }
         }
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -176,6 +186,24 @@ namespace UEFA_league
                     Convert.ToBoolean(row[12]));
                 edt.ShowDialog();
                 matchesTableAdapter.Fill(uEFA_leagueDataSet.matches);
+                uEFA_leagueDataSet.AcceptChanges();
+            }
+            if (lable_table_name.Text == "Judges")
+            {
+                var st = new UEFA_leagueDataSet.judgesDataTable();
+                judgesTableAdapter.FillBy(st,
+                    Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value));
+                object[] row = st.Rows[0].ItemArray;
+                var edt = new EditJudge(
+                    Convert.ToInt32(row[0]),
+                    row[1].ToString(),
+                    Convert.ToDateTime(row[2]),
+                    row[3].ToString(),
+                    Convert.ToInt32(row[4]),
+                    Convert.ToInt32(row[5]),
+                    row[6].ToString());
+                edt.ShowDialog();
+                judgesTableAdapter.Fill(uEFA_leagueDataSet.judges);
                 uEFA_leagueDataSet.AcceptChanges();
             }
         }
@@ -228,6 +256,29 @@ namespace UEFA_league
                 matchesTableAdapter.Fill(uEFA_leagueDataSet.matches);
                 uEFA_leagueDataSet.AcceptChanges();
             }
+            if (lable_table_name.Text == "Judges")
+            {
+                string st = "";
+                for (int i = 0; i < dataGridView1.SelectedRows.Count; ++i)
+                {
+                    st += Convert.ToString(dataGridView1.SelectedRows[i].Cells[0].Value);
+                    st += " ";
+                }
+                var result = MessageBox.Show(
+                    $"Are you sure about deleting rows with id {st}?",
+                    "Confirmation",
+                    MessageBoxButtons.YesNo);
+                if (result == DialogResult.No)
+                {
+                    return;
+                }
+                for (int i = 0; i < dataGridView1.SelectedRows.Count; ++i)
+                {
+                    judgesTableAdapter.DeleteQuery(Convert.ToInt32(dataGridView1.SelectedRows[i].Cells[0].Value));
+                }
+                judgesTableAdapter.Fill(uEFA_leagueDataSet.judges);
+                uEFA_leagueDataSet.AcceptChanges();
+            }
         }
 
         private void byTeamAndNumberToolStripMenuItem_Click(object sender, EventArgs e)
@@ -273,6 +324,9 @@ namespace UEFA_league
             sortP.ShowDialog();
         }
 
-       
+        private void editFormToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
