@@ -89,7 +89,6 @@
             this.matchesTableAdapter = new UEFA_league.UEFA_leagueDataSetTableAdapters.matchesTableAdapter();
             this.judgesTableAdapter = new UEFA_league.UEFA_leagueDataSetTableAdapters.judgesTableAdapter();
             this.stadiumsTableAdapter = new UEFA_league.UEFA_leagueDataSetTableAdapters.stadiumsTableAdapter();
-            this.countTeamsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
@@ -314,8 +313,7 @@
             this.databaseToolStripMenuItem,
             this.editFormToolStripMenuItem,
             this.sortToolStripMenuItem,
-            this.searchToolStripMenuItem,
-            this.countTeamsToolStripMenuItem});
+            this.searchToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(703, 24);
@@ -325,8 +323,8 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exitToolStripMenuItem,
-            this.saveToolStripMenuItem});
+            this.saveToolStripMenuItem,
+            this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
@@ -334,14 +332,14 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
@@ -490,20 +488,20 @@
             // playersToolStripMenuItem1
             // 
             this.playersToolStripMenuItem1.Name = "playersToolStripMenuItem1";
-            this.playersToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.playersToolStripMenuItem1.Size = new System.Drawing.Size(119, 22);
             this.playersToolStripMenuItem1.Text = "Players";
             this.playersToolStripMenuItem1.Click += new System.EventHandler(this.playersToolStripMenuItem1_Click);
             // 
             // matchesToolStripMenuItem1
             // 
             this.matchesToolStripMenuItem1.Name = "matchesToolStripMenuItem1";
-            this.matchesToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.matchesToolStripMenuItem1.Size = new System.Drawing.Size(119, 22);
             this.matchesToolStripMenuItem1.Text = "Matches";
             // 
             // judgesToolStripMenuItem1
             // 
             this.judgesToolStripMenuItem1.Name = "judgesToolStripMenuItem1";
-            this.judgesToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.judgesToolStripMenuItem1.Size = new System.Drawing.Size(119, 22);
             this.judgesToolStripMenuItem1.Text = "Judges";
             // 
             // lable_table_name
@@ -550,13 +548,6 @@
             // stadiumsTableAdapter
             // 
             this.stadiumsTableAdapter.ClearBeforeFill = true;
-            // 
-            // countTeamsToolStripMenuItem
-            // 
-            this.countTeamsToolStripMenuItem.Name = "countTeamsToolStripMenuItem";
-            this.countTeamsToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
-            this.countTeamsToolStripMenuItem.Text = "Count teams";
-            this.countTeamsToolStripMenuItem.Click += new System.EventHandler(this.countTeamsToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -652,7 +643,6 @@
         private System.Windows.Forms.ToolStripMenuItem playersToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem matchesToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem judgesToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem countTeamsToolStripMenuItem;
     }
 }
 

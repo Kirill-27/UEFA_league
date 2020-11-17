@@ -50,5 +50,69 @@ namespace UEFA_league
             Close();
         }
 
+        private void countPlayersInTeamsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SqlConnection sqlconn = new SqlConnection(ConnectionString);
+            sqlconn.Open();
+            SqlDataAdapter oda = new SqlDataAdapter(
+                @"SELECT  teams.team_name, COUNT(players.team) AS Expr1
+                    FROM  teams  LEFT JOIN  players
+                    ON players.team = teams.team_id
+                GROUP BY teams.team_name
+                ORDER BY teams.team_name", sqlconn);
+            DataTable dt = new DataTable();
+            oda.Fill(dt);
+            dataGridView1.DataSource = dt;
+            sqlconn.Close();
+        }
+
+        private void countPlayersNationalityToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SqlConnection sqlconn = new SqlConnection(ConnectionString);
+            sqlconn.Open();
+            SqlDataAdapter oda = new SqlDataAdapter(
+                @"SELECT  teams.team_name, players.nationality, COUNT(player_id) AS Expr1
+                    FROM  teams  LEFT JOIN  players
+                    ON players.team = teams.team_id
+                GROUP BY teams.team_name, players.nationality
+                ORDER BY teams.team_name, Expr1 DESC", sqlconn);
+            DataTable dt = new DataTable();
+            oda.Fill(dt);
+            dataGridView1.DataSource = dt;
+            sqlconn.Close();
+        }
+
+        private void attendanceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SqlConnection sqlconn = new SqlConnection(ConnectionString);
+            sqlconn.Open();
+            SqlDataAdapter oda = new SqlDataAdapter(
+                @"SELECT  teams.team_name, AVG(attendance) AS Expr1
+                    FROM  matches LEFT JOIN teams
+                    ON host_team_id = teams.team_id
+                GROUP BY teams.team_name
+                ORDER BY Expr1 DESC", sqlconn);
+            DataTable dt = new DataTable();
+            oda.Fill(dt);
+            dataGridView1.DataSource = dt;
+            sqlconn.Close();
+        }
+
+        private void judgesCostsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SqlConnection sqlconn = new SqlConnection(ConnectionString);
+            sqlconn.Open();
+            SqlDataAdapter oda = new SqlDataAdapter(
+                @"SELECT  judges.full_name, COUNT(matches.judge_id)* judges.salary_per_match
+                    AS Expr1
+                    FROM  judges LEFT JOIN matches
+                    ON matches.judge_id = judges.judge_id
+                GROUP BY judges.full_name, judges.salary_per_match
+                ORDER BY Expr1 DESC", sqlconn);
+            DataTable dt = new DataTable();
+            oda.Fill(dt);
+            dataGridView1.DataSource = dt;
+            sqlconn.Close();
+        }
     }
 }

@@ -33,15 +33,21 @@
             this.DoSQLbutton = new System.Windows.Forms.Button();
             this.Clearbutton = new System.Windows.Forms.Button();
             this.TestInput = new System.Windows.Forms.RichTextBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.countPlayersInTeamsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.countPlayersNationalityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.attendanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.judgesCostsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 193);
+            this.dataGridView1.Location = new System.Drawing.Point(23, 174);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(609, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(609, 234);
             this.dataGridView1.TabIndex = 9;
             // 
             // Exitbutton
@@ -86,21 +92,67 @@
             this.TestInput.TabIndex = 5;
             this.TestInput.Text = "SELECT";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.countPlayersInTeamsToolStripMenuItem,
+            this.countPlayersNationalityToolStripMenuItem,
+            this.attendanceToolStripMenuItem,
+            this.judgesCostsToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(656, 24);
+            this.menuStrip1.TabIndex = 10;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // countPlayersInTeamsToolStripMenuItem
+            // 
+            this.countPlayersInTeamsToolStripMenuItem.Name = "countPlayersInTeamsToolStripMenuItem";
+            this.countPlayersInTeamsToolStripMenuItem.Size = new System.Drawing.Size(140, 20);
+            this.countPlayersInTeamsToolStripMenuItem.Text = "Count players in teams";
+            this.countPlayersInTeamsToolStripMenuItem.Click += new System.EventHandler(this.countPlayersInTeamsToolStripMenuItem_Click);
+            // 
+            // countPlayersNationalityToolStripMenuItem
+            // 
+            this.countPlayersNationalityToolStripMenuItem.Name = "countPlayersNationalityToolStripMenuItem";
+            this.countPlayersNationalityToolStripMenuItem.Size = new System.Drawing.Size(151, 20);
+            this.countPlayersNationalityToolStripMenuItem.Text = "Count players nationality";
+            this.countPlayersNationalityToolStripMenuItem.Click += new System.EventHandler(this.countPlayersNationalityToolStripMenuItem_Click);
+            // 
+            // attendanceToolStripMenuItem
+            // 
+            this.attendanceToolStripMenuItem.Name = "attendanceToolStripMenuItem";
+            this.attendanceToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
+            this.attendanceToolStripMenuItem.Text = "Attendance";
+            this.attendanceToolStripMenuItem.Click += new System.EventHandler(this.attendanceToolStripMenuItem_Click);
+            // 
+            // judgesCostsToolStripMenuItem
+            // 
+            this.judgesCostsToolStripMenuItem.Name = "judgesCostsToolStripMenuItem";
+            this.judgesCostsToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
+            this.judgesCostsToolStripMenuItem.Text = "Judges costs";
+            this.judgesCostsToolStripMenuItem.Click += new System.EventHandler(this.judgesCostsToolStripMenuItem_Click);
+            // 
             // QueryEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(654, 388);
+            this.ClientSize = new System.Drawing.Size(656, 414);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Exitbutton);
             this.Controls.Add(this.DoSQLbutton);
             this.Controls.Add(this.Clearbutton);
             this.Controls.Add(this.TestInput);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "QueryEdit";
             this.Text = "Query Edit";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -111,5 +163,10 @@
         private System.Windows.Forms.Button DoSQLbutton;
         private System.Windows.Forms.Button Clearbutton;
         private System.Windows.Forms.RichTextBox TestInput;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem countPlayersInTeamsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem countPlayersNationalityToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem attendanceToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem judgesCostsToolStripMenuItem;
     }
 }

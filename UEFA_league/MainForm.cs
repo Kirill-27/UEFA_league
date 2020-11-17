@@ -273,21 +273,6 @@ namespace UEFA_league
             sortP.ShowDialog();
         }
 
-        private void countTeamsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SqlConnection sqlconn = new SqlConnection(ConnectionString);
-            sqlconn.Open();
-            SqlDataAdapter oda = new SqlDataAdapter(
-                @"SELECT        teams.team_name, COUNT(players.team) AS Expr1
-                    FROM            players INNER JOIN
-                         teams ON players.team = teams.team_id
-                GROUP BY teams.team_name", sqlconn);
-            DataTable dt = new DataTable();
-            oda.Fill(dt);
-            dataGridView1.DataSource = dt;
-            sqlconn.Close();
-
-            
-        }
+       
     }
 }
