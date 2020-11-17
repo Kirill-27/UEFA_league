@@ -451,7 +451,6 @@
             this.matchesToolStripMenuItem1.Name = "matchesToolStripMenuItem1";
             this.matchesToolStripMenuItem1.Size = new System.Drawing.Size(119, 22);
             this.matchesToolStripMenuItem1.Text = "Matches";
-            this.matchesToolStripMenuItem1.Click += new System.EventHandler(this.matchesToolStripMenuItem1_Click);
             // 
             // judgesToolStripMenuItem1
             // 

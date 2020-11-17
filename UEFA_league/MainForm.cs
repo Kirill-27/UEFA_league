@@ -95,6 +95,11 @@ namespace UEFA_league
 
         private void matchesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            search1_but.Text = "Team name";
+            search2_but.Text = "Judge name";
+            search3_but.Text = "";
+            filter1_button.Text = "Total goals";
+            filter2_button.Text = "Total cards";
             bindingNavigator1.BindingSource = matchesBindingSource;
             dataGridView1.DataSource = matchesBindingSource;
             lable_table_name.Text = ma;
@@ -359,10 +364,7 @@ namespace UEFA_league
             sortP.ShowDialog();
         }
 
-        private void matchesToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            dataGridView1.DataSource = playersTableAdapter.FilterAge(28, 36);
-        }
+        
 
         private void filter1_button_Click(object sender, EventArgs e)
         {
@@ -386,6 +388,19 @@ namespace UEFA_league
                     int f1 = Convert.ToInt32(filter_st1.Text),
                     f2 = Convert.ToInt32(filter_fn1.Text);
                     dataGridView1.DataSource = judgesTableAdapter.AgeFilter(f1, f2);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(@"Error: " + ex.Message);
+                }
+            }
+            if (lable_table_name.Text == ma)
+            {
+                try
+                {
+                    int f1 = Convert.ToInt32(filter_st1.Text),
+                    f2 = Convert.ToInt32(filter_fn1.Text);
+                    dataGridView1.DataSource = matchesTableAdapter.TotalGoalFilter(f1,f2);
                 }
                 catch (Exception ex)
                 {
@@ -422,7 +437,19 @@ namespace UEFA_league
                     MessageBox.Show(@"Error: " + ex.Message);
                 }
             }
-
+            if (lable_table_name.Text == ma)
+            {
+                try
+                {
+                    int f1 = Convert.ToInt32(filter_st1.Text),
+                    f2 = Convert.ToInt32(filter_fn1.Text);
+                    dataGridView1.DataSource = matchesTableAdapter.TotalCardFilter(f1, f2);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(@"Error: " + ex.Message);
+                }
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -446,6 +473,17 @@ namespace UEFA_league
                 try
                 {
                     dataGridView1.DataSource = judgesTableAdapter.FullNameSearch(r);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(@"Error: " + ex.Message);
+                }
+            }
+            if (lable_table_name.Text == ma)
+            {
+                try
+                {
+                    dataGridView1.DataSource = matchesTableAdapter.TeamSearch(r);
                 }
                 catch (Exception ex)
                 {
@@ -476,6 +514,17 @@ namespace UEFA_league
                 try
                 {
                     dataGridView1.DataSource = judgesTableAdapter.NationSearch(r);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(@"Error: " + ex.Message);
+                }
+            }
+            if (lable_table_name.Text == ma)
+            {
+                try
+                {
+                    dataGridView1.DataSource = matchesTableAdapter.JudgeNameSearch(r);
                 }
                 catch (Exception ex)
                 {
