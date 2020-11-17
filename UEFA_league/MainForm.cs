@@ -98,6 +98,10 @@ namespace UEFA_league
             bindingNavigator1.BindingSource = judgesBindingSource;
             dataGridView1.DataSource = judgesBindingSource;
             lable_table_name.Text = "Judges";
+            sortToolStripMenuItem.Text = "Sort judges";
+            byIdToolStripMenuItem.Text = "By id";
+            byTeamAndNumberToolStripMenuItem.Text = "By age";
+            bySurnameToolStripMenuItem.Text = "By salary per match";
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -291,6 +295,10 @@ namespace UEFA_league
             {
                 dataGridView1.DataSource = matchesTableAdapter.OrderByAttendance();
             }
+            if (lable_table_name.Text == "Judges")
+            {
+                dataGridView1.DataSource = judgesTableAdapter.OrderByAge();
+            }
         }
 
         private void byAgeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -302,6 +310,10 @@ namespace UEFA_league
             if (lable_table_name.Text == "Matches")
             {
                 dataGridView1.DataSource = matchesTableAdapter.OrderMatchById();
+            }
+            if (lable_table_name.Text == "Judges")
+            {
+                dataGridView1.DataSource = judgesTableAdapter.OrderJudgesById();
             }
 
         }
@@ -315,6 +327,10 @@ namespace UEFA_league
             if (lable_table_name.Text == "Matches")
             {
                 dataGridView1.DataSource = matchesTableAdapter.OrderByDate();
+            }
+            if (lable_table_name.Text == "Judges")
+            {
+                dataGridView1.DataSource = judgesTableAdapter.OrderBySalary();
             }
         }
 

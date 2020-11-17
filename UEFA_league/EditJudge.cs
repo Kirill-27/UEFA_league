@@ -35,6 +35,7 @@ namespace UEFA_league.Forms
         {
             InitializeComponent();
             judgesTableAdapter1.Fill(uEFA_leagueDataSet.judges);
+            judge_id_label.Text = Convert.ToString(judge_id);
             edit = true;
             id = judge_id;
             Name_textBox.Text = full_name;
