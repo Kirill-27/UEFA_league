@@ -60,20 +60,58 @@ namespace UEFA_league
         {
             List<int> Teams_id = new List<int>();
             List<int> Judges_id = new List<int>();
+
+
             Teams_id.Add(Convert.ToInt32(comboBox1.SelectedValue));
             Teams_id.Add(Convert.ToInt32(comboBox2.SelectedValue));
             Teams_id.Add(Convert.ToInt32(comboBox3.SelectedValue));
             Teams_id.Add(Convert.ToInt32(comboBox4.SelectedValue));
-            Judges_id.Add(1);
-            Judges_id.Add(2);
-            ScheduleForGroupe(Teams_id, DateTime.Now, Judges_id);
-            string st = "";
-            for(int i = 0; i < Teams_id.Count();i++)
+            Teams_id.Add(Convert.ToInt32(comboBox5.SelectedValue));
+            Teams_id.Add(Convert.ToInt32(comboBox6.SelectedValue));
+            Teams_id.Add(Convert.ToInt32(comboBox7.SelectedValue));
+            Teams_id.Add(Convert.ToInt32(comboBox8.SelectedValue));
+            Teams_id.Sort();
+            for(int i=1;i<Teams_id.Count();i++)
             {
-                st += Convert.ToString(Teams_id[i]);
-                st += " ";
+                if(Teams_id[i]==Teams_id[i-1])
+                {
+                    MessageBox.Show($"Eror: more then one team_id with value {Teams_id[i]}");
+                    return;
+                }
             }
-            MessageBox.Show(st);
+            Teams_id.Clear();
+
+            Judges_id.Add(Convert.ToInt32(judgeA1_comboBox.SelectedValue));
+            Judges_id.Add(Convert.ToInt32(judgeA2_comboBox.SelectedValue));
+            Judges_id.Add(Convert.ToInt32(judgeB1_comboBox.SelectedValue));
+            Judges_id.Add(Convert.ToInt32(judgeB2_comboBox.SelectedValue));
+            for (int i = 1; i < Judges_id.Count(); i++)
+            {
+                if (Judges_id[i] == Judges_id[i - 1])
+                {
+                    MessageBox.Show($"Eror: more then one judge_id with value {Judges_id[i]}");
+                    return;
+                }
+            }
+
+            Judges_id.Clear();
+            Teams_id.Add(Convert.ToInt32(comboBox1.SelectedValue));
+            Teams_id.Add(Convert.ToInt32(comboBox2.SelectedValue));
+            Teams_id.Add(Convert.ToInt32(comboBox3.SelectedValue));
+            Teams_id.Add(Convert.ToInt32(comboBox4.SelectedValue));
+            Judges_id.Add(Convert.ToInt32(judgeA1_comboBox.SelectedValue));
+            Judges_id.Add(Convert.ToInt32(judgeA2_comboBox.SelectedValue));
+            ScheduleForGroupe(Teams_id, dateTimePicker1.Value, Judges_id);
+           
+            Teams_id.Clear();
+            Judges_id.Clear();
+            Teams_id.Add(Convert.ToInt32(comboBox5.SelectedValue));
+            Teams_id.Add(Convert.ToInt32(comboBox6.SelectedValue));
+            Teams_id.Add(Convert.ToInt32(comboBox7.SelectedValue));
+            Teams_id.Add(Convert.ToInt32(comboBox8.SelectedValue));
+            Judges_id.Add(Convert.ToInt32(judgeB1_comboBox.SelectedValue));
+            Judges_id.Add(Convert.ToInt32(judgeB2_comboBox.SelectedValue));
+            ScheduleForGroupe(Teams_id, dateTimePicker1.Value, Judges_id);
         }
     }
 }

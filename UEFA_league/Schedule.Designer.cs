@@ -58,8 +58,8 @@
             this.judgeA2_comboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox9 = new System.Windows.Forms.ComboBox();
-            this.comboBox10 = new System.Windows.Forms.ComboBox();
+            this.judgeB2_comboBox = new System.Windows.Forms.ComboBox();
+            this.judgeB1_comboBox = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -67,6 +67,8 @@
             this.judgesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.judgesBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.judgesBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.uEFA_leagueDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource1)).BeginInit();
@@ -269,7 +271,7 @@
             this.judgeA1_comboBox.DisplayMember = "full_name";
             this.judgeA1_comboBox.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.judgeA1_comboBox.FormattingEnabled = true;
-            this.judgeA1_comboBox.Location = new System.Drawing.Point(74, 214);
+            this.judgeA1_comboBox.Location = new System.Drawing.Point(74, 195);
             this.judgeA1_comboBox.Name = "judgeA1_comboBox";
             this.judgeA1_comboBox.Size = new System.Drawing.Size(152, 26);
             this.judgeA1_comboBox.TabIndex = 11;
@@ -295,7 +297,7 @@
             this.judgeA2_comboBox.DisplayMember = "full_name";
             this.judgeA2_comboBox.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.judgeA2_comboBox.FormattingEnabled = true;
-            this.judgeA2_comboBox.Location = new System.Drawing.Point(74, 246);
+            this.judgeA2_comboBox.Location = new System.Drawing.Point(74, 227);
             this.judgeA2_comboBox.Name = "judgeA2_comboBox";
             this.judgeA2_comboBox.Size = new System.Drawing.Size(152, 26);
             this.judgeA2_comboBox.TabIndex = 12;
@@ -304,46 +306,46 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(242, 214);
+            this.label3.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(242, 195);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 21);
+            this.label3.Size = new System.Drawing.Size(68, 21);
             this.label3.TabIndex = 13;
             this.label3.Text = "Judge 1";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(242, 246);
+            this.label4.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(242, 227);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 21);
+            this.label4.Size = new System.Drawing.Size(68, 21);
             this.label4.TabIndex = 14;
             this.label4.Text = "Judge 2";
             // 
-            // comboBox9
+            // judgeB2_comboBox
             // 
-            this.comboBox9.DataSource = this.judgesBindingSource3;
-            this.comboBox9.DisplayMember = "full_name";
-            this.comboBox9.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox9.FormattingEnabled = true;
-            this.comboBox9.Location = new System.Drawing.Point(330, 245);
-            this.comboBox9.Name = "comboBox9";
-            this.comboBox9.Size = new System.Drawing.Size(152, 26);
-            this.comboBox9.TabIndex = 16;
-            this.comboBox9.ValueMember = "judge_id";
+            this.judgeB2_comboBox.DataSource = this.judgesBindingSource3;
+            this.judgeB2_comboBox.DisplayMember = "full_name";
+            this.judgeB2_comboBox.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.judgeB2_comboBox.FormattingEnabled = true;
+            this.judgeB2_comboBox.Location = new System.Drawing.Point(330, 226);
+            this.judgeB2_comboBox.Name = "judgeB2_comboBox";
+            this.judgeB2_comboBox.Size = new System.Drawing.Size(152, 26);
+            this.judgeB2_comboBox.TabIndex = 16;
+            this.judgeB2_comboBox.ValueMember = "judge_id";
             // 
-            // comboBox10
+            // judgeB1_comboBox
             // 
-            this.comboBox10.DataSource = this.judgesBindingSource2;
-            this.comboBox10.DisplayMember = "full_name";
-            this.comboBox10.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox10.FormattingEnabled = true;
-            this.comboBox10.Location = new System.Drawing.Point(330, 213);
-            this.comboBox10.Name = "comboBox10";
-            this.comboBox10.Size = new System.Drawing.Size(152, 26);
-            this.comboBox10.TabIndex = 15;
-            this.comboBox10.ValueMember = "judge_id";
+            this.judgeB1_comboBox.DataSource = this.judgesBindingSource2;
+            this.judgeB1_comboBox.DisplayMember = "full_name";
+            this.judgeB1_comboBox.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.judgeB1_comboBox.FormattingEnabled = true;
+            this.judgeB1_comboBox.Location = new System.Drawing.Point(330, 194);
+            this.judgeB1_comboBox.Name = "judgeB1_comboBox";
+            this.judgeB1_comboBox.Size = new System.Drawing.Size(152, 26);
+            this.judgeB1_comboBox.TabIndex = 15;
+            this.judgeB1_comboBox.ValueMember = "judge_id";
             // 
             // label5
             // 
@@ -400,18 +402,38 @@
             this.judgesBindingSource3.DataMember = "judges";
             this.judgesBindingSource3.DataSource = this.uEFA_leagueDataSet1;
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(63, 316);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 26);
+            this.dateTimePicker1.TabIndex = 21;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(59, 292);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(154, 21);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "First match date";
+            // 
             // Schedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(578, 339);
+            this.ClientSize = new System.Drawing.Size(578, 364);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.comboBox9);
-            this.Controls.Add(this.comboBox10);
+            this.Controls.Add(this.judgeB2_comboBox);
+            this.Controls.Add(this.judgeB1_comboBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.judgeA2_comboBox);
@@ -480,8 +502,8 @@
         private System.Windows.Forms.ComboBox judgeA2_comboBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox9;
-        private System.Windows.Forms.ComboBox comboBox10;
+        private System.Windows.Forms.ComboBox judgeB2_comboBox;
+        private System.Windows.Forms.ComboBox judgeB1_comboBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
@@ -489,5 +511,7 @@
         private System.Windows.Forms.BindingSource judgesBindingSource1;
         private System.Windows.Forms.BindingSource judgesBindingSource3;
         private System.Windows.Forms.BindingSource judgesBindingSource2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label9;
     }
 }
