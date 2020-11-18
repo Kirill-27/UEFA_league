@@ -31,7 +31,17 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.playeridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.playernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nationalityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.teamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salarypermonthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.playersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.uEFA_leagueDataSet = new UEFA_league.UEFA_leagueDataSet();
             this.stadiumsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
@@ -67,9 +77,6 @@
             this.byTeamAndNumberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bySurnameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.playersToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.matchesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.judgesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.lable_table_name = new System.Windows.Forms.Label();
             this.teamsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.matchesBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -85,16 +92,6 @@
             this.SearchTextbox = new System.Windows.Forms.TextBox();
             this.search1_but = new System.Windows.Forms.Button();
             this.search2_but = new System.Windows.Forms.Button();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.uEFA_leagueDataSet = new UEFA_league.UEFA_leagueDataSet();
-            this.playeridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.playernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nationalityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.teamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.salarypermonthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.playersTableAdapter = new UEFA_league.UEFA_leagueDataSetTableAdapters.playersTableAdapter();
             this.teamsTableAdapter = new UEFA_league.UEFA_leagueDataSetTableAdapters.teamsTableAdapter();
             this.matchesTableAdapter = new UEFA_league.UEFA_leagueDataSetTableAdapters.matchesTableAdapter();
@@ -103,6 +100,8 @@
             this.search3_but = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uEFA_leagueDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stadiumsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
@@ -110,8 +109,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.matchesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.judgesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uEFA_leagueDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -134,10 +131,68 @@
             this.dataGridView1.Size = new System.Drawing.Size(651, 253);
             this.dataGridView1.TabIndex = 0;
             // 
+            // playeridDataGridViewTextBoxColumn
+            // 
+            this.playeridDataGridViewTextBoxColumn.DataPropertyName = "player_id";
+            this.playeridDataGridViewTextBoxColumn.HeaderText = "player_id";
+            this.playeridDataGridViewTextBoxColumn.Name = "playeridDataGridViewTextBoxColumn";
+            // 
+            // playernameDataGridViewTextBoxColumn
+            // 
+            this.playernameDataGridViewTextBoxColumn.DataPropertyName = "player_name";
+            this.playernameDataGridViewTextBoxColumn.HeaderText = "player_name";
+            this.playernameDataGridViewTextBoxColumn.Name = "playernameDataGridViewTextBoxColumn";
+            // 
+            // surnameDataGridViewTextBoxColumn
+            // 
+            this.surnameDataGridViewTextBoxColumn.DataPropertyName = "surname";
+            this.surnameDataGridViewTextBoxColumn.HeaderText = "surname";
+            this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
+            // 
+            // numberDataGridViewTextBoxColumn
+            // 
+            this.numberDataGridViewTextBoxColumn.DataPropertyName = "number";
+            this.numberDataGridViewTextBoxColumn.HeaderText = "number";
+            this.numberDataGridViewTextBoxColumn.Name = "numberDataGridViewTextBoxColumn";
+            // 
+            // ageDataGridViewTextBoxColumn
+            // 
+            this.ageDataGridViewTextBoxColumn.DataPropertyName = "age";
+            this.ageDataGridViewTextBoxColumn.HeaderText = "age";
+            this.ageDataGridViewTextBoxColumn.Name = "ageDataGridViewTextBoxColumn";
+            // 
+            // nationalityDataGridViewTextBoxColumn
+            // 
+            this.nationalityDataGridViewTextBoxColumn.DataPropertyName = "nationality";
+            this.nationalityDataGridViewTextBoxColumn.HeaderText = "nationality";
+            this.nationalityDataGridViewTextBoxColumn.Name = "nationalityDataGridViewTextBoxColumn";
+            // 
+            // teamDataGridViewTextBoxColumn
+            // 
+            this.teamDataGridViewTextBoxColumn.DataPropertyName = "team";
+            this.teamDataGridViewTextBoxColumn.HeaderText = "team";
+            this.teamDataGridViewTextBoxColumn.Name = "teamDataGridViewTextBoxColumn";
+            // 
+            // salarypermonthDataGridViewTextBoxColumn
+            // 
+            this.salarypermonthDataGridViewTextBoxColumn.DataPropertyName = "salary_per_month";
+            this.salarypermonthDataGridViewTextBoxColumn.HeaderText = "salary_per_month";
+            this.salarypermonthDataGridViewTextBoxColumn.Name = "salarypermonthDataGridViewTextBoxColumn";
+            // 
             // playersBindingSource
             // 
             this.playersBindingSource.DataMember = "players";
             this.playersBindingSource.DataSource = this.bindingSource1;
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataSource = this.uEFA_leagueDataSet;
+            this.bindingSource1.Position = 0;
+            // 
+            // uEFA_leagueDataSet
+            // 
+            this.uEFA_leagueDataSet.DataSetName = "UEFA_leagueDataSet";
+            this.uEFA_leagueDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // stadiumsBindingSource
             // 
@@ -335,35 +390,35 @@
             // playersToolStripMenuItem
             // 
             this.playersToolStripMenuItem.Name = "playersToolStripMenuItem";
-            this.playersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.playersToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.playersToolStripMenuItem.Text = "Players";
             this.playersToolStripMenuItem.Click += new System.EventHandler(this.playersToolStripMenuItem_Click);
             // 
             // teamsToolStripMenuItem
             // 
             this.teamsToolStripMenuItem.Name = "teamsToolStripMenuItem";
-            this.teamsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.teamsToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.teamsToolStripMenuItem.Text = "Teams";
             this.teamsToolStripMenuItem.Click += new System.EventHandler(this.teamsToolStripMenuItem_Click);
             // 
             // stadiumsToolStripMenuItem
             // 
             this.stadiumsToolStripMenuItem.Name = "stadiumsToolStripMenuItem";
-            this.stadiumsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.stadiumsToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.stadiumsToolStripMenuItem.Text = "Stadiums";
             this.stadiumsToolStripMenuItem.Click += new System.EventHandler(this.stadiumsToolStripMenuItem_Click);
             // 
             // matchesToolStripMenuItem
             // 
             this.matchesToolStripMenuItem.Name = "matchesToolStripMenuItem";
-            this.matchesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.matchesToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.matchesToolStripMenuItem.Text = "Matches";
             this.matchesToolStripMenuItem.Click += new System.EventHandler(this.matchesToolStripMenuItem_Click);
             // 
             // judgesToolStripMenuItem
             // 
             this.judgesToolStripMenuItem.Name = "judgesToolStripMenuItem";
-            this.judgesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.judgesToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.judgesToolStripMenuItem.Text = "Judges";
             this.judgesToolStripMenuItem.Click += new System.EventHandler(this.judgesToolStripMenuItem_Click);
             // 
@@ -431,32 +486,10 @@
             // 
             // searchToolStripMenuItem
             // 
-            this.searchToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.playersToolStripMenuItem1,
-            this.matchesToolStripMenuItem1,
-            this.judgesToolStripMenuItem1});
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(121, 20);
-            this.searchToolStripMenuItem.Text = "Search and filtering";
-            // 
-            // playersToolStripMenuItem1
-            // 
-            this.playersToolStripMenuItem1.Name = "playersToolStripMenuItem1";
-            this.playersToolStripMenuItem1.Size = new System.Drawing.Size(119, 22);
-            this.playersToolStripMenuItem1.Text = "Players";
-            this.playersToolStripMenuItem1.Click += new System.EventHandler(this.playersToolStripMenuItem1_Click);
-            // 
-            // matchesToolStripMenuItem1
-            // 
-            this.matchesToolStripMenuItem1.Name = "matchesToolStripMenuItem1";
-            this.matchesToolStripMenuItem1.Size = new System.Drawing.Size(119, 22);
-            this.matchesToolStripMenuItem1.Text = "Matches";
-            // 
-            // judgesToolStripMenuItem1
-            // 
-            this.judgesToolStripMenuItem1.Name = "judgesToolStripMenuItem1";
-            this.judgesToolStripMenuItem1.Size = new System.Drawing.Size(119, 22);
-            this.judgesToolStripMenuItem1.Text = "Judges";
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(107, 20);
+            this.searchToolStripMenuItem.Text = "Make a schedule";
+            this.searchToolStripMenuItem.Click += new System.EventHandler(this.searchToolStripMenuItem_Click);
             // 
             // lable_table_name
             // 
@@ -584,64 +617,6 @@
             this.search2_but.UseVisualStyleBackColor = true;
             this.search2_but.Click += new System.EventHandler(this.button2_Click);
             // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataSource = this.uEFA_leagueDataSet;
-            this.bindingSource1.Position = 0;
-            // 
-            // uEFA_leagueDataSet
-            // 
-            this.uEFA_leagueDataSet.DataSetName = "UEFA_leagueDataSet";
-            this.uEFA_leagueDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // playeridDataGridViewTextBoxColumn
-            // 
-            this.playeridDataGridViewTextBoxColumn.DataPropertyName = "player_id";
-            this.playeridDataGridViewTextBoxColumn.HeaderText = "player_id";
-            this.playeridDataGridViewTextBoxColumn.Name = "playeridDataGridViewTextBoxColumn";
-            // 
-            // playernameDataGridViewTextBoxColumn
-            // 
-            this.playernameDataGridViewTextBoxColumn.DataPropertyName = "player_name";
-            this.playernameDataGridViewTextBoxColumn.HeaderText = "player_name";
-            this.playernameDataGridViewTextBoxColumn.Name = "playernameDataGridViewTextBoxColumn";
-            // 
-            // surnameDataGridViewTextBoxColumn
-            // 
-            this.surnameDataGridViewTextBoxColumn.DataPropertyName = "surname";
-            this.surnameDataGridViewTextBoxColumn.HeaderText = "surname";
-            this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
-            // 
-            // numberDataGridViewTextBoxColumn
-            // 
-            this.numberDataGridViewTextBoxColumn.DataPropertyName = "number";
-            this.numberDataGridViewTextBoxColumn.HeaderText = "number";
-            this.numberDataGridViewTextBoxColumn.Name = "numberDataGridViewTextBoxColumn";
-            // 
-            // ageDataGridViewTextBoxColumn
-            // 
-            this.ageDataGridViewTextBoxColumn.DataPropertyName = "age";
-            this.ageDataGridViewTextBoxColumn.HeaderText = "age";
-            this.ageDataGridViewTextBoxColumn.Name = "ageDataGridViewTextBoxColumn";
-            // 
-            // nationalityDataGridViewTextBoxColumn
-            // 
-            this.nationalityDataGridViewTextBoxColumn.DataPropertyName = "nationality";
-            this.nationalityDataGridViewTextBoxColumn.HeaderText = "nationality";
-            this.nationalityDataGridViewTextBoxColumn.Name = "nationalityDataGridViewTextBoxColumn";
-            // 
-            // teamDataGridViewTextBoxColumn
-            // 
-            this.teamDataGridViewTextBoxColumn.DataPropertyName = "team";
-            this.teamDataGridViewTextBoxColumn.HeaderText = "team";
-            this.teamDataGridViewTextBoxColumn.Name = "teamDataGridViewTextBoxColumn";
-            // 
-            // salarypermonthDataGridViewTextBoxColumn
-            // 
-            this.salarypermonthDataGridViewTextBoxColumn.DataPropertyName = "salary_per_month";
-            this.salarypermonthDataGridViewTextBoxColumn.HeaderText = "salary_per_month";
-            this.salarypermonthDataGridViewTextBoxColumn.Name = "salarypermonthDataGridViewTextBoxColumn";
-            // 
             // playersTableAdapter
             // 
             this.playersTableAdapter.ClearBeforeFill = true;
@@ -701,6 +676,8 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.playersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uEFA_leagueDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stadiumsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
@@ -710,8 +687,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.matchesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.judgesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uEFA_leagueDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -775,9 +750,6 @@
         private System.Windows.Forms.ToolStripMenuItem bySurnameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem byIdToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem playersToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem matchesToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem judgesToolStripMenuItem1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;

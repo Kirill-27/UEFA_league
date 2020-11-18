@@ -358,14 +358,6 @@ namespace UEFA_league
             }
         }
 
-        private void playersToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            var sortP = new PlayersSort();
-            sortP.ShowDialog();
-        }
-
-        
-
         private void filter1_button_Click(object sender, EventArgs e)
         {
             if (lable_table_name.Text == pl)
@@ -561,5 +553,13 @@ namespace UEFA_league
                 }
             }
         }
+
+        private void searchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Schedule().ShowDialog();
+            matchesTableAdapter.Fill(uEFA_leagueDataSet.matches);
+            uEFA_leagueDataSet.AcceptChanges();
+        }
+
     }
 }
