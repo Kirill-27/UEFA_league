@@ -112,6 +112,8 @@ namespace UEFA_league
             Judges_id.Add(Convert.ToInt32(judgeB1_comboBox.SelectedValue));
             Judges_id.Add(Convert.ToInt32(judgeB2_comboBox.SelectedValue));
             ScheduleForGroupe(Teams_id, dateTimePicker1.Value, Judges_id);
+            MessageBox.Show("The schedule was completed successfully");
+            button1.Visible = false;
         }
     }
 }

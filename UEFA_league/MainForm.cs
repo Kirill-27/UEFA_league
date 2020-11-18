@@ -31,6 +31,7 @@ namespace UEFA_league
             teamsTableAdapter.Update(uEFA_leagueDataSet);
             playersTableAdapter.Update(uEFA_leagueDataSet);
             matchesTableAdapter.Update(uEFA_leagueDataSet);
+            
         }
        
         public MainForm()

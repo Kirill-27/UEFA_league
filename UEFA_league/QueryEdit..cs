@@ -72,7 +72,7 @@ namespace UEFA_league
             sqlconn.Open();
             SqlDataAdapter oda = new SqlDataAdapter(
                 @"SELECT  teams.team_name, players.nationality, COUNT(player_id) AS Expr1
-                    FROM  teams  LEFT JOIN  players
+                    FROM  teams  RIGHT JOIN  players
                     ON players.team = teams.team_id
                 GROUP BY teams.team_name, players.nationality
                 ORDER BY teams.team_name, Expr1 DESC", sqlconn);
@@ -90,6 +90,7 @@ namespace UEFA_league
                 @"SELECT  teams.team_name, AVG(attendance) AS Expr1
                     FROM  matches LEFT JOIN teams
                     ON host_team_id = teams.team_id
+                    WHERE was_played = 1
                 GROUP BY teams.team_name
                 ORDER BY Expr1 DESC", sqlconn);
             DataTable dt = new DataTable();

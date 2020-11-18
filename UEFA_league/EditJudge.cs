@@ -73,6 +73,15 @@ namespace UEFA_league.Forms
                 Convert.ToInt32(Age_numericUpDown.Value),
                 Convert.ToInt32(Sal_numeric.Value),
                 Category_comboBox.Text);
+
+                judgesTableAdapter1.Insert(
+                Convert.ToInt32(judgesTableAdapter1.ScalarQuery()) + 1,
+                Name_textBox.Text,
+                Convert.ToDateTime(dateTimePicker1.Value),
+                Nationality_textBox.Text,
+                Convert.ToInt32(Age_numericUpDown.Value),
+                Convert.ToInt32(Sal_numeric.Value),
+                Category_comboBox.Text);
             }
             Close();
         }
