@@ -72,7 +72,7 @@ namespace UEFA_league
             sqlconn.Open();
             SqlDataAdapter oda = new SqlDataAdapter(
                 @"SELECT  teams.team_name, players.nationality, COUNT(player_id) AS Expr1
-                    FROM  teams  RIGHT JOIN  players
+                    FROM  players  LEFT JOIN teams
                     ON players.team = teams.team_id
                 GROUP BY teams.team_name, players.nationality
                 ORDER BY teams.team_name, Expr1 DESC", sqlconn);

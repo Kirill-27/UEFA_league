@@ -38,7 +38,7 @@
             // GetReportButton
             // 
             this.GetReportButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.GetReportButton.Location = new System.Drawing.Point(475, 347);
+            this.GetReportButton.Location = new System.Drawing.Point(487, 330);
             this.GetReportButton.Name = "GetReportButton";
             this.GetReportButton.Size = new System.Drawing.Size(149, 37);
             this.GetReportButton.TabIndex = 0;
@@ -49,18 +49,19 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(69, 51);
+            this.dataGridView1.Location = new System.Drawing.Point(26, 34);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(345, 333);
+            this.dataGridView1.Size = new System.Drawing.Size(385, 333);
             this.dataGridView1.TabIndex = 10;
             // 
             // NationalityReport
             // 
             this.NationalityReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.NationalityReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.NationalityReport.Location = new System.Drawing.Point(458, 210);
+            this.NationalityReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NationalityReport.Location = new System.Drawing.Point(458, 100);
             this.NationalityReport.Name = "NationalityReport";
-            this.NationalityReport.Size = new System.Drawing.Size(166, 50);
+            this.NationalityReport.Size = new System.Drawing.Size(178, 50);
             this.NationalityReport.TabIndex = 11;
             this.NationalityReport.Text = "Nationality report";
             this.NationalityReport.UseVisualStyleBackColor = false;
@@ -70,9 +71,10 @@
             // 
             this.JudesReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.JudesReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.JudesReport.Location = new System.Drawing.Point(458, 135);
+            this.JudesReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.JudesReport.Location = new System.Drawing.Point(458, 34);
             this.JudesReport.Name = "JudesReport";
-            this.JudesReport.Size = new System.Drawing.Size(166, 50);
+            this.JudesReport.Size = new System.Drawing.Size(178, 50);
             this.JudesReport.TabIndex = 12;
             this.JudesReport.Text = "Judes report";
             this.JudesReport.UseVisualStyleBackColor = false;
@@ -83,7 +85,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(692, 450);
+            this.ClientSize = new System.Drawing.Size(666, 394);
             this.Controls.Add(this.JudesReport);
             this.Controls.Add(this.NationalityReport);
             this.Controls.Add(this.dataGridView1);
