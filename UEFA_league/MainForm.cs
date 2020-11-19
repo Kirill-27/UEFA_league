@@ -367,7 +367,13 @@ namespace UEFA_league
                 {
                     int f1 = Convert.ToInt32(filter_st1.Text),
                     f2 = Convert.ToInt32(filter_fn1.Text);
+                    if(f1>f2 || f1 < 0 || f2<0)
+                    {
+                        MessageBox.Show("Incorrect values for filtering");
+                        return;
+                    }
                     dataGridView1.DataSource = playersTableAdapter.FilterAge(f1, f2);
+                    
                 }
                 catch (Exception ex)
                 {
@@ -380,6 +386,11 @@ namespace UEFA_league
                 {
                     int f1 = Convert.ToInt32(filter_st1.Text),
                     f2 = Convert.ToInt32(filter_fn1.Text);
+                    if (f1 > f2 || f1 < 0 || f2 < 0)
+                    {
+                        MessageBox.Show("Incorrect values for filtering");
+                        return;
+                    }
                     dataGridView1.DataSource = judgesTableAdapter.AgeFilter(f1, f2);
                 }
                 catch (Exception ex)
@@ -393,6 +404,11 @@ namespace UEFA_league
                 {
                     int f1 = Convert.ToInt32(filter_st1.Text),
                     f2 = Convert.ToInt32(filter_fn1.Text);
+                    if (f1 > f2 || f1 < 0 || f2 < 0)
+                    {
+                        MessageBox.Show("Incorrect values for filtering");
+                        return;
+                    }
                     dataGridView1.DataSource = matchesTableAdapter.TotalGoalFilter(f1,f2);
                 }
                 catch (Exception ex)
@@ -410,6 +426,11 @@ namespace UEFA_league
                 {
                     int f1 = Convert.ToInt32(filter_st1.Text),
                     f2 = Convert.ToInt32(filter_fn1.Text);
+                    if (f1 > f2 || f1 < 0 || f2 < 0)
+                    {
+                        MessageBox.Show("Incorrect values for filtering");
+                        return;
+                    }
                     dataGridView1.DataSource = playersTableAdapter.SalaryFilter(f1, f2);
                 }
                 catch (Exception ex)
@@ -423,6 +444,11 @@ namespace UEFA_league
                 {
                     int f1 = Convert.ToInt32(filter_st1.Text),
                     f2 = Convert.ToInt32(filter_fn1.Text);
+                    if (f1 > f2 || f1 < 0 || f2 < 0)
+                    {
+                        MessageBox.Show("Incorrect values for filtering");
+                        return;
+                    }
                     dataGridView1.DataSource = judgesTableAdapter.SalaryFilter(f1, f2);
                 }
                 catch (Exception ex)
@@ -436,6 +462,11 @@ namespace UEFA_league
                 {
                     int f1 = Convert.ToInt32(filter_st1.Text),
                     f2 = Convert.ToInt32(filter_fn1.Text);
+                    if (f1 > f2 || f1 < 0 || f2 < 0)
+                    {
+                        MessageBox.Show("Incorrect values for filtering");
+                        return;
+                    }
                     dataGridView1.DataSource = matchesTableAdapter.TotalCardFilter(f1, f2);
                 }
                 catch (Exception ex)
@@ -562,5 +593,10 @@ namespace UEFA_league
             uEFA_leagueDataSet.AcceptChanges();
         }
 
+        private void reportsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var pr1 = new Report1();
+            pr1.ShowDialog();
+        }
     }
 }
