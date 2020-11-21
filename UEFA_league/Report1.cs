@@ -44,6 +44,7 @@ namespace UEFA_league
                         table.Cell(i+2, 1).Range.Text = Convert.ToString(dataGridView1.Rows[i].Cells[0].Value);
                         table.Cell(i+2, 2).Range.Text = Convert.ToString(dataGridView1.Rows[i].Cells[1].Value);
                     }
+                    ReplaceWord("{date}", Convert.ToString(DateTime.Now) , document);
                     ReplaceWord("{sum}", Convert.ToString(sum), document);
                     document.SaveAs(@"D:\Универ\3 сем\БД\Курсач\Res.docx");
                 }
@@ -53,7 +54,7 @@ namespace UEFA_league
                 {
                     MessageBox.Show("Something went wrong.");
                 }
-                wordApp.Visible = false;
+                //wordApp.Visible = false;
             }
             if(NationalityReport.BackColor == Color.FromArgb(128, 128, 255))
             {
@@ -76,6 +77,7 @@ namespace UEFA_league
                         table.Cell(i + 2, 2).Range.Text = Convert.ToString(dataGridView1.Rows[i].Cells[1].Value);
                         table.Cell(i + 2, 3).Range.Text = Convert.ToString(dataGridView1.Rows[i].Cells[2].Value);
                     }
+                    ReplaceWord("{date}", Convert.ToString(DateTime.Now), document);
                     ReplaceWord("{sum}", Convert.ToString(sum), document);
                     document.SaveAs(@"D:\Универ\3 сем\БД\Курсач\ResPL.docx");
                 }
@@ -104,7 +106,7 @@ namespace UEFA_league
             SqlConnection sqlconn = new SqlConnection(ConnectionString);
             sqlconn.Open();
             SqlDataAdapter oda = new SqlDataAdapter(
-                @"SELECT  judges.full_name, COUNT(matches.judge_id)* judges.salary_per_match
+                @"SELECT  judges.full_name, COUNT(matches.match_id)* judges.salary_per_match
                     AS Expr1
                     FROM  judges LEFT JOIN matches
                     ON matches.judge_id = judges.judge_id

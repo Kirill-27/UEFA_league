@@ -38,6 +38,7 @@
             this.countPlayersNationalityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.attendanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.judgesCostsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.yellowCardsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -98,7 +99,8 @@
             this.countPlayersInTeamsToolStripMenuItem,
             this.countPlayersNationalityToolStripMenuItem,
             this.attendanceToolStripMenuItem,
-            this.judgesCostsToolStripMenuItem});
+            this.judgesCostsToolStripMenuItem,
+            this.yellowCardsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(656, 24);
@@ -132,6 +134,13 @@
             this.judgesCostsToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
             this.judgesCostsToolStripMenuItem.Text = "Judges costs";
             this.judgesCostsToolStripMenuItem.Click += new System.EventHandler(this.judgesCostsToolStripMenuItem_Click);
+            // 
+            // yellowCardsToolStripMenuItem
+            // 
+            this.yellowCardsToolStripMenuItem.Name = "yellowCardsToolStripMenuItem";
+            this.yellowCardsToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.yellowCardsToolStripMenuItem.Text = "Budgets";
+            this.yellowCardsToolStripMenuItem.Click += new System.EventHandler(this.yellowCardsToolStripMenuItem_Click);
             // 
             // QueryEdit
             // 
@@ -168,5 +177,6 @@
         private System.Windows.Forms.ToolStripMenuItem countPlayersNationalityToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem attendanceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem judgesCostsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem yellowCardsToolStripMenuItem;
     }
 }

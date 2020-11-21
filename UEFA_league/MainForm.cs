@@ -298,9 +298,23 @@ namespace UEFA_league
                 {
                     return;
                 }
+                string stErrorDelete = "Some referees referee matches, they cannot be removed. Id them: ";
+                bool ifErrorDelete = false;
                 for (int i = 0; i < dataGridView1.SelectedRows.Count; ++i)
                 {
+                    if(matchesTableAdapter.CountMathesByJudge(
+                        Convert.ToInt32(dataGridView1.SelectedRows[i].Cells[0].Value))!=0)
+                    {
+                        ifErrorDelete = true;
+                        stErrorDelete += Convert.ToString(dataGridView1.SelectedRows[i].Cells[0].Value);
+                        stErrorDelete += " ";
+                    }
+                        else
                     judgesTableAdapter.DeleteQuery(Convert.ToInt32(dataGridView1.SelectedRows[i].Cells[0].Value));
+                }
+                if(ifErrorDelete)
+                {
+                    MessageBox.Show(stErrorDelete);
                 }
                 judgesTableAdapter.Fill(uEFA_leagueDataSet.judges);
                 uEFA_leagueDataSet.AcceptChanges();
@@ -525,6 +539,11 @@ namespace UEFA_league
             {
                 try
                 {
+                    if(Convert.ToInt32(SearchTextbox.Text)<=0)
+                    {
+                        MessageBox.Show("Incorrect values for filtering");
+                        return;
+                    }
                     dataGridView1.DataSource =
                         playersTableAdapter.NumberSearch(Convert.ToInt32(SearchTextbox.Text));
                 }
@@ -598,5 +617,7 @@ namespace UEFA_league
             var pr1 = new Report1();
             pr1.ShowDialog();
         }
+
+        
     }
 }

@@ -104,11 +104,27 @@ namespace UEFA_league
             SqlConnection sqlconn = new SqlConnection(ConnectionString);
             sqlconn.Open();
             SqlDataAdapter oda = new SqlDataAdapter(
-                @"SELECT  judges.full_name, COUNT(matches.judge_id)* judges.salary_per_match
+                @"SELECT  judges.full_name, COUNT(matches.match_id)* judges.salary_per_match
                     AS Expr1
                     FROM  judges LEFT JOIN matches
                     ON matches.judge_id = judges.judge_id
                 GROUP BY judges.full_name, judges.salary_per_match
+                ORDER BY Expr1 DESC", sqlconn);
+            DataTable dt = new DataTable();
+            oda.Fill(dt);
+            dataGridView1.DataSource = dt;
+            sqlconn.Close();
+        }
+
+        private void yellowCardsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SqlConnection sqlconn = new SqlConnection(ConnectionString);
+            sqlconn.Open();
+            SqlDataAdapter oda = new SqlDataAdapter(
+                @"SELECT  teams.team_name, budget-12*COALESCE(SUM(salary_per_month), 0 ) AS Expr1
+                    FROM teams LEFT JOIN players
+                    ON team = team_id
+                GROUP BY teams.team_name, budget
                 ORDER BY Expr1 DESC", sqlconn);
             DataTable dt = new DataTable();
             oda.Fill(dt);
