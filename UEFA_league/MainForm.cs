@@ -70,7 +70,6 @@ namespace UEFA_league
             search3_but.Text = "By all text fields";
             filter1_button.Text = "Age";
             filter2_button.Text = "Salary";
-            bindingNavigator1.BindingSource = playersBindingSource; 
             dataGridView1.DataSource = playersBindingSource; 
             lable_table_name.Text = pl;
             sortToolStripMenuItem.Text = "Sort players";
@@ -81,14 +80,12 @@ namespace UEFA_league
 
         private void teamsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            bindingNavigator1.BindingSource = teamsBindingSource;
             dataGridView1.DataSource = teamsBindingSource;
             lable_table_name.Text = te;
         }
 
         private void stadiumsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            bindingNavigator1.BindingSource = stadiumsBindingSource;
             dataGridView1.DataSource = stadiumsBindingSource;
             lable_table_name.Text = st;
         }
@@ -100,7 +97,6 @@ namespace UEFA_league
             search3_but.Text = "";
             filter1_button.Text = "Total goals";
             filter2_button.Text = "Total cards";
-            bindingNavigator1.BindingSource = matchesBindingSource;
             dataGridView1.DataSource = matchesBindingSource;
             lable_table_name.Text = ma;
             sortToolStripMenuItem.Text = "Sort matches";
@@ -116,7 +112,6 @@ namespace UEFA_league
             search3_but.Text = "By all text fields";
             filter1_button.Text = "Age";
             filter2_button.Text = "Salary";
-            bindingNavigator1.BindingSource = judgesBindingSource;
             dataGridView1.DataSource = judgesBindingSource;
             lable_table_name.Text = ju;
             sortToolStripMenuItem.Text = "Sort judges";
@@ -341,17 +336,14 @@ namespace UEFA_league
             if (lable_table_name.Text == pl)
             {
                 dataGridView1.DataSource = playersBindingSource;
-                bindingNavigator1.BindingSource = playersBindingSource;
             }
             if (lable_table_name.Text == ma)
             {
                 dataGridView1.DataSource = matchesBindingSource;
-                bindingNavigator1.BindingSource = matchesBindingSource;
             }
             if (lable_table_name.Text == ju)
             {
                 dataGridView1.DataSource = judgesBindingSource;
-                bindingNavigator1.BindingSource = judgesBindingSource;
             }
 
         }
