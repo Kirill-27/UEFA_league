@@ -61,8 +61,6 @@ namespace UEFA_league
                 MessageBox.Show(@"Error: " + ex.Message);
             }
 
-
-            
         }
         private void ScheduleForGroupe(
             List<int> Teams, DateTime firstMatch)

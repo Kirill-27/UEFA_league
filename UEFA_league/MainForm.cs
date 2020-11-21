@@ -31,7 +31,6 @@ namespace UEFA_league
             teamsTableAdapter.Update(uEFA_leagueDataSet);
             playersTableAdapter.Update(uEFA_leagueDataSet);
             matchesTableAdapter.Update(uEFA_leagueDataSet);
-            
         }
        
         public MainForm()
@@ -618,6 +617,93 @@ namespace UEFA_league
             pr1.ShowDialog();
         }
 
-        
+        private void countPlayersInTeamsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            lable_table_name.Text = "Count players in teams";
+            SqlConnection sqlconn = new SqlConnection(ConnectionString);
+            sqlconn.Open();
+            SqlDataAdapter oda = new SqlDataAdapter(
+                @"SELECT  teams.team_name, COUNT(players.team) AS players_number
+                    FROM  teams  LEFT JOIN  players
+                    ON players.team = teams.team_id
+                GROUP BY teams.team_name
+                ORDER BY teams.team_name", sqlconn);
+            DataTable dt = new DataTable();
+            oda.Fill(dt);
+            dataGridView1.DataSource = dt;
+            sqlconn.Close();
+        }
+
+        private void countPlayersNationalityToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            lable_table_name.Text = "Count players nationality";
+
+            SqlConnection sqlconn = new SqlConnection(ConnectionString);
+            sqlconn.Open();
+            SqlDataAdapter oda = new SqlDataAdapter(
+                @"SELECT  teams.team_name, players.nationality, COUNT(player_id) AS players_number
+                    FROM  players  LEFT JOIN teams
+                    ON players.team = teams.team_id
+                GROUP BY teams.team_name, players.nationality
+                ORDER BY teams.team_name, players_number DESC", sqlconn);
+            DataTable dt = new DataTable();
+            oda.Fill(dt);
+            dataGridView1.DataSource = dt;
+            sqlconn.Close();
+        }
+
+        private void attendanceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            lable_table_name.Text = "Attendance";
+            SqlConnection sqlconn = new SqlConnection(ConnectionString);
+            sqlconn.Open();
+            SqlDataAdapter oda = new SqlDataAdapter(
+                @"SELECT  teams.team_name, AVG(attendance) AS average_attendance
+                    FROM  matches LEFT JOIN teams
+                    ON host_team_id = teams.team_id
+                    WHERE was_played = 1
+                GROUP BY teams.team_name
+                ORDER BY average_attendance DESC", sqlconn);
+            DataTable dt = new DataTable();
+            oda.Fill(dt);
+            dataGridView1.DataSource = dt;
+            sqlconn.Close();
+        }
+
+        private void judgesCostsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            lable_table_name.Text = "Judges costs";
+
+            SqlConnection sqlconn = new SqlConnection(ConnectionString);
+            sqlconn.Open();
+            SqlDataAdapter oda = new SqlDataAdapter(
+                @"SELECT  judges.full_name, COUNT(matches.match_id)* judges.salary_per_match
+                    AS expenses
+                    FROM  judges LEFT JOIN matches
+                    ON matches.judge_id = judges.judge_id
+                GROUP BY judges.full_name, judges.salary_per_match
+                ORDER BY expenses DESC", sqlconn);
+            DataTable dt = new DataTable();
+            oda.Fill(dt);
+            dataGridView1.DataSource = dt;
+            sqlconn.Close();
+        }
+
+        private void budgetsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            lable_table_name.Text = "Budget balance";
+            SqlConnection sqlconn = new SqlConnection(ConnectionString);
+            sqlconn.Open();
+            SqlDataAdapter oda = new SqlDataAdapter(
+                @"SELECT  teams.team_name, budget-12*COALESCE(SUM(salary_per_month), 0 ) AS balance
+                    FROM teams LEFT JOIN players
+                    ON team = team_id
+                GROUP BY teams.team_name, budget
+                ORDER BY balance DESC", sqlconn);
+            DataTable dt = new DataTable();
+            oda.Fill(dt);
+            dataGridView1.DataSource = dt;
+            sqlconn.Close();
+        }
     }
 }
