@@ -30,59 +30,55 @@
         {
             this.components = new System.ComponentModel.Container();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.uEFA_leagueDataSet = new UEFA_league.UEFA_leagueDataSet();
             this.teamsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uEFA_leagueDataSet = new UEFA_league.UEFA_leagueDataSet();
             this.teamsTableAdapter = new UEFA_league.UEFA_leagueDataSetTableAdapters.teamsTableAdapter();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
             this.teamsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.teamsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.teamsBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            this.teamsBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
-            this.teamsBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
-            this.teamsBindingSource6 = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.teamsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.teamsBindingSource7 = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.teamsBindingSource6 = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.teamsBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBox8 = new System.Windows.Forms.ComboBox();
+            this.teamsBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.matchesTableAdapter1 = new UEFA_league.UEFA_leagueDataSetTableAdapters.matchesTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.judgeA1_comboBox = new System.Windows.Forms.ComboBox();
-            this.uEFA_leagueDataSet1 = new UEFA_league.UEFA_leagueDataSet();
             this.judgesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uEFA_leagueDataSet1 = new UEFA_league.UEFA_leagueDataSet();
             this.judgesTableAdapter = new UEFA_league.UEFA_leagueDataSetTableAdapters.judgesTableAdapter();
-            this.judgeA2_comboBox = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.judgeB2_comboBox = new System.Windows.Forms.ComboBox();
-            this.judgeB1_comboBox = new System.Windows.Forms.ComboBox();
+            this.judgesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.judgesBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.judgesBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.judgesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.judgesBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.judgesBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.uEFA_leagueDataSet)).BeginInit();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uEFA_leagueDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uEFA_leagueDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.judgesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uEFA_leagueDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.judgesBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.judgesBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.judgesBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.judgesBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -97,15 +93,15 @@
             this.comboBox1.TabIndex = 0;
             this.comboBox1.ValueMember = "team_id";
             // 
-            // uEFA_leagueDataSet
-            // 
-            this.uEFA_leagueDataSet.DataSetName = "UEFA_leagueDataSet";
-            this.uEFA_leagueDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // teamsBindingSource
             // 
             this.teamsBindingSource.DataMember = "teams";
             this.teamsBindingSource.DataSource = this.uEFA_leagueDataSet;
+            // 
+            // uEFA_leagueDataSet
+            // 
+            this.uEFA_leagueDataSet.DataSetName = "UEFA_leagueDataSet";
+            this.uEFA_leagueDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // teamsTableAdapter
             // 
@@ -123,6 +119,11 @@
             this.comboBox2.TabIndex = 1;
             this.comboBox2.ValueMember = "team_id";
             // 
+            // teamsBindingSource1
+            // 
+            this.teamsBindingSource1.DataMember = "teams";
+            this.teamsBindingSource1.DataSource = this.uEFA_leagueDataSet;
+            // 
             // comboBox3
             // 
             this.comboBox3.DataSource = this.teamsBindingSource3;
@@ -134,6 +135,11 @@
             this.comboBox3.Size = new System.Drawing.Size(192, 26);
             this.comboBox3.TabIndex = 3;
             this.comboBox3.ValueMember = "team_id";
+            // 
+            // teamsBindingSource3
+            // 
+            this.teamsBindingSource3.DataMember = "teams";
+            this.teamsBindingSource3.DataSource = this.uEFA_leagueDataSet;
             // 
             // comboBox4
             // 
@@ -147,6 +153,11 @@
             this.comboBox4.TabIndex = 2;
             this.comboBox4.ValueMember = "team_id";
             // 
+            // teamsBindingSource2
+            // 
+            this.teamsBindingSource2.DataMember = "teams";
+            this.teamsBindingSource2.DataSource = this.uEFA_leagueDataSet;
+            // 
             // comboBox5
             // 
             this.comboBox5.DataSource = this.teamsBindingSource7;
@@ -158,6 +169,11 @@
             this.comboBox5.Size = new System.Drawing.Size(192, 26);
             this.comboBox5.TabIndex = 7;
             this.comboBox5.ValueMember = "team_id";
+            // 
+            // teamsBindingSource7
+            // 
+            this.teamsBindingSource7.DataMember = "teams";
+            this.teamsBindingSource7.DataSource = this.uEFA_leagueDataSet;
             // 
             // comboBox6
             // 
@@ -171,6 +187,11 @@
             this.comboBox6.TabIndex = 6;
             this.comboBox6.ValueMember = "team_id";
             // 
+            // teamsBindingSource6
+            // 
+            this.teamsBindingSource6.DataMember = "teams";
+            this.teamsBindingSource6.DataSource = this.uEFA_leagueDataSet;
+            // 
             // comboBox7
             // 
             this.comboBox7.DataSource = this.teamsBindingSource5;
@@ -182,6 +203,11 @@
             this.comboBox7.Size = new System.Drawing.Size(192, 26);
             this.comboBox7.TabIndex = 5;
             this.comboBox7.ValueMember = "team_id";
+            // 
+            // teamsBindingSource5
+            // 
+            this.teamsBindingSource5.DataMember = "teams";
+            this.teamsBindingSource5.DataSource = this.uEFA_leagueDataSet;
             // 
             // comboBox8
             // 
@@ -195,45 +221,15 @@
             this.comboBox8.TabIndex = 4;
             this.comboBox8.ValueMember = "team_id";
             // 
-            // teamsBindingSource1
-            // 
-            this.teamsBindingSource1.DataMember = "teams";
-            this.teamsBindingSource1.DataSource = this.uEFA_leagueDataSet;
-            // 
-            // teamsBindingSource2
-            // 
-            this.teamsBindingSource2.DataMember = "teams";
-            this.teamsBindingSource2.DataSource = this.uEFA_leagueDataSet;
-            // 
-            // teamsBindingSource3
-            // 
-            this.teamsBindingSource3.DataMember = "teams";
-            this.teamsBindingSource3.DataSource = this.uEFA_leagueDataSet;
-            // 
             // teamsBindingSource4
             // 
             this.teamsBindingSource4.DataMember = "teams";
             this.teamsBindingSource4.DataSource = this.uEFA_leagueDataSet;
             // 
-            // teamsBindingSource5
-            // 
-            this.teamsBindingSource5.DataMember = "teams";
-            this.teamsBindingSource5.DataSource = this.uEFA_leagueDataSet;
-            // 
-            // teamsBindingSource6
-            // 
-            this.teamsBindingSource6.DataMember = "teams";
-            this.teamsBindingSource6.DataSource = this.uEFA_leagueDataSet;
-            // 
-            // teamsBindingSource7
-            // 
-            this.teamsBindingSource7.DataMember = "teams";
-            this.teamsBindingSource7.DataSource = this.uEFA_leagueDataSet;
-            // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(339, 297);
+            this.button1.Location = new System.Drawing.Point(340, 254);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(125, 35);
             this.button1.TabIndex = 8;
@@ -265,87 +261,34 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "Group B";
             // 
-            // judgeA1_comboBox
+            // judgesBindingSource
             // 
-            this.judgeA1_comboBox.DataSource = this.judgesBindingSource;
-            this.judgeA1_comboBox.DisplayMember = "full_name";
-            this.judgeA1_comboBox.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.judgeA1_comboBox.FormattingEnabled = true;
-            this.judgeA1_comboBox.Location = new System.Drawing.Point(74, 195);
-            this.judgeA1_comboBox.Name = "judgeA1_comboBox";
-            this.judgeA1_comboBox.Size = new System.Drawing.Size(152, 26);
-            this.judgeA1_comboBox.TabIndex = 11;
-            this.judgeA1_comboBox.ValueMember = "judge_id";
+            this.judgesBindingSource.DataMember = "judges";
+            this.judgesBindingSource.DataSource = this.uEFA_leagueDataSet1;
             // 
             // uEFA_leagueDataSet1
             // 
             this.uEFA_leagueDataSet1.DataSetName = "UEFA_leagueDataSet";
             this.uEFA_leagueDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // judgesBindingSource
-            // 
-            this.judgesBindingSource.DataMember = "judges";
-            this.judgesBindingSource.DataSource = this.uEFA_leagueDataSet1;
-            // 
             // judgesTableAdapter
             // 
             this.judgesTableAdapter.ClearBeforeFill = true;
             // 
-            // judgeA2_comboBox
+            // judgesBindingSource1
             // 
-            this.judgeA2_comboBox.DataSource = this.judgesBindingSource1;
-            this.judgeA2_comboBox.DisplayMember = "full_name";
-            this.judgeA2_comboBox.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.judgeA2_comboBox.FormattingEnabled = true;
-            this.judgeA2_comboBox.Location = new System.Drawing.Point(74, 227);
-            this.judgeA2_comboBox.Name = "judgeA2_comboBox";
-            this.judgeA2_comboBox.Size = new System.Drawing.Size(152, 26);
-            this.judgeA2_comboBox.TabIndex = 12;
-            this.judgeA2_comboBox.ValueMember = "judge_id";
+            this.judgesBindingSource1.DataMember = "judges";
+            this.judgesBindingSource1.DataSource = this.uEFA_leagueDataSet1;
             // 
-            // label3
+            // judgesBindingSource3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(242, 195);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 21);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Judge 1";
+            this.judgesBindingSource3.DataMember = "judges";
+            this.judgesBindingSource3.DataSource = this.uEFA_leagueDataSet1;
             // 
-            // label4
+            // judgesBindingSource2
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(242, 227);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 21);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Judge 2";
-            // 
-            // judgeB2_comboBox
-            // 
-            this.judgeB2_comboBox.DataSource = this.judgesBindingSource3;
-            this.judgeB2_comboBox.DisplayMember = "full_name";
-            this.judgeB2_comboBox.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.judgeB2_comboBox.FormattingEnabled = true;
-            this.judgeB2_comboBox.Location = new System.Drawing.Point(330, 226);
-            this.judgeB2_comboBox.Name = "judgeB2_comboBox";
-            this.judgeB2_comboBox.Size = new System.Drawing.Size(152, 26);
-            this.judgeB2_comboBox.TabIndex = 16;
-            this.judgeB2_comboBox.ValueMember = "judge_id";
-            // 
-            // judgeB1_comboBox
-            // 
-            this.judgeB1_comboBox.DataSource = this.judgesBindingSource2;
-            this.judgeB1_comboBox.DisplayMember = "full_name";
-            this.judgeB1_comboBox.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.judgeB1_comboBox.FormattingEnabled = true;
-            this.judgeB1_comboBox.Location = new System.Drawing.Point(330, 194);
-            this.judgeB1_comboBox.Name = "judgeB1_comboBox";
-            this.judgeB1_comboBox.Size = new System.Drawing.Size(152, 26);
-            this.judgeB1_comboBox.TabIndex = 15;
-            this.judgeB1_comboBox.ValueMember = "judge_id";
+            this.judgesBindingSource2.DataMember = "judges";
+            this.judgesBindingSource2.DataSource = this.uEFA_leagueDataSet1;
             // 
             // label5
             // 
@@ -387,25 +330,10 @@
             this.label8.TabIndex = 19;
             this.label8.Text = "Team 3";
             // 
-            // judgesBindingSource1
-            // 
-            this.judgesBindingSource1.DataMember = "judges";
-            this.judgesBindingSource1.DataSource = this.uEFA_leagueDataSet1;
-            // 
-            // judgesBindingSource2
-            // 
-            this.judgesBindingSource2.DataMember = "judges";
-            this.judgesBindingSource2.DataSource = this.uEFA_leagueDataSet1;
-            // 
-            // judgesBindingSource3
-            // 
-            this.judgesBindingSource3.DataMember = "judges";
-            this.judgesBindingSource3.DataSource = this.uEFA_leagueDataSet1;
-            // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(63, 316);
+            this.dateTimePicker1.Location = new System.Drawing.Point(48, 263);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 26);
             this.dateTimePicker1.TabIndex = 21;
@@ -414,30 +342,34 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(59, 292);
+            this.label9.Location = new System.Drawing.Point(44, 239);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(154, 21);
             this.label9.TabIndex = 22;
             this.label9.Text = "First match date";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(556, -2);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(21, 26);
+            this.dataGridView1.TabIndex = 23;
+            this.dataGridView1.Visible = false;
             // 
             // Schedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(578, 364);
+            this.ClientSize = new System.Drawing.Size(578, 319);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.judgeB2_comboBox);
-            this.Controls.Add(this.judgeB1_comboBox);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.judgeA2_comboBox);
-            this.Controls.Add(this.judgeA1_comboBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
@@ -452,20 +384,21 @@
             this.Name = "Schedule";
             this.Text = "Schedule";
             this.Load += new System.EventHandler(this.Schedule_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.uEFA_leagueDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uEFA_leagueDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uEFA_leagueDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.judgesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uEFA_leagueDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.judgesBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.judgesBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.judgesBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.judgesBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -495,15 +428,9 @@
         private UEFA_leagueDataSetTableAdapters.matchesTableAdapter matchesTableAdapter1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox judgeA1_comboBox;
         private UEFA_leagueDataSet uEFA_leagueDataSet1;
         private System.Windows.Forms.BindingSource judgesBindingSource;
         private UEFA_leagueDataSetTableAdapters.judgesTableAdapter judgesTableAdapter;
-        private System.Windows.Forms.ComboBox judgeA2_comboBox;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox judgeB2_comboBox;
-        private System.Windows.Forms.ComboBox judgeB1_comboBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
@@ -513,5 +440,6 @@
         private System.Windows.Forms.BindingSource judgesBindingSource2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
