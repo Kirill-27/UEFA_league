@@ -40,6 +40,10 @@ namespace UEFA_league
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "uEFA_leagueDataSet1.DataTable2". При необходимости она может быть перемещена или удалена.
+            this.dataTable2TableAdapter.Fill(this.uEFA_leagueDataSet1.DataTable2);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "uEFA_leagueDataSet1.DataTable1". При необходимости она может быть перемещена или удалена.
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "uEFA_leagueDataSet.Pl". При необходимости она может быть перемещена или удалена.
             dataGridView1.AutoGenerateColumns = true;
             // TODO: данная строка кода позволяет загрузить данные в таблицу "uEFA_leagueDataSet.stadiums". При необходимости она может быть перемещена или удалена.
             this.stadiumsTableAdapter.Fill(this.uEFA_leagueDataSet.stadiums);
@@ -70,7 +74,6 @@ namespace UEFA_league
             search3_but.Text = "By all text fields";
             filter1_button.Text = "Age";
             filter2_button.Text = "Salary";
-            dataGridView1.DataSource = playersBindingSource; 
             lable_table_name.Text = pl;
             sortToolStripMenuItem.Text = "Sort players";
             byIdToolStripMenuItem.Text = "By id";
@@ -97,7 +100,6 @@ namespace UEFA_league
             search3_but.Text = "";
             filter1_button.Text = "Total goals";
             filter2_button.Text = "Total cards";
-            dataGridView1.DataSource = matchesBindingSource;
             lable_table_name.Text = ma;
             sortToolStripMenuItem.Text = "Sort matches";
             byIdToolStripMenuItem.Text = "By id";
@@ -137,6 +139,11 @@ namespace UEFA_league
         {
             var qu = new QueryEdit();
             qu.ShowDialog();
+            playersTableAdapter.Fill(uEFA_leagueDataSet.players);
+            teamsTableAdapter.Fill(uEFA_leagueDataSet.teams);
+            matchesTableAdapter.Fill(uEFA_leagueDataSet.matches);
+            judgesTableAdapter.Fill(uEFA_leagueDataSet.judges);
+            stadiumsTableAdapter.Fill(uEFA_leagueDataSet.stadiums);
         }
 
         private void addToolStripMenuItem_Click(object sender, EventArgs e)

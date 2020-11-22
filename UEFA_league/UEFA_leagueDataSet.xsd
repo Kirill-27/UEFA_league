@@ -638,7 +638,9 @@ ORDER BY player_id</CommandText>
               <DbSource ConnectionRef="UEFA_leagueConnectionString (Settings)" DbObjectName="UEFA_league.dbo.players" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy3" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="OrderBySurname" GeneratorSourceName="FillBy3" GetMethodModifier="Public" GetMethodName="OrderBySurname" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="OrderBySurname" UserSourceName="FillBy3">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT player_id, player_name, surname, number, age, nationality, team, salary_per_month FROM players
+                    <CommandText>SELECT player_id, player_name, surname, number, age, nationality, team , salary_per_month FROM players
+LEFT JOIN TEAMS
+ON  team =  team_id
 ORDER BY  surname;</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -897,6 +899,87 @@ SELECT team_id, team_name, stadium_id, date_of_creation, budget, home_uniform, g
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PlTableAdapter" GeneratorDataComponentClassName="PlTableAdapter" Name="Pl" UserDataComponentName="PlTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="UEFA_leagueConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        players.player_id, players.player_name, players.surname, players.number, players.age, players.nationality, players.salary_per_month, teams.team_name
+FROM            players INNER JOIN
+                         teams ON players.team = teams.team_id</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="player_id" DataSetColumn="player_id" />
+              <Mapping SourceColumn="player_name" DataSetColumn="player_name" />
+              <Mapping SourceColumn="surname" DataSetColumn="surname" />
+              <Mapping SourceColumn="number" DataSetColumn="number" />
+              <Mapping SourceColumn="age" DataSetColumn="age" />
+              <Mapping SourceColumn="nationality" DataSetColumn="nationality" />
+              <Mapping SourceColumn="salary_per_month" DataSetColumn="salary_per_month" />
+              <Mapping SourceColumn="team_name" DataSetColumn="team_name" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Ma1TableAdapter" GeneratorDataComponentClassName="Ma1TableAdapter" Name="DataTable1" UserDataComponentName="Ma1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="UEFA_leagueConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        matches.match_id, teams.team_name, matches.match_date, matches.host_goals, matches.guest_goals, matches.host_yellow_card, matches.guest_yellow_card, 
+                         matches.stage, matches.weather, matches.attendance, matches.was_played, judges.full_name
+FROM            matches INNER JOIN
+                         teams ON matches.host_team_id = teams.team_id AND matches.guest_team_id = teams.team_id INNER JOIN
+                         judges ON matches.judge_id = judges.judge_id</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="match_id" DataSetColumn="match_id" />
+              <Mapping SourceColumn="team_name" DataSetColumn="team_name" />
+              <Mapping SourceColumn="match_date" DataSetColumn="match_date" />
+              <Mapping SourceColumn="host_goals" DataSetColumn="host_goals" />
+              <Mapping SourceColumn="guest_goals" DataSetColumn="guest_goals" />
+              <Mapping SourceColumn="host_yellow_card" DataSetColumn="host_yellow_card" />
+              <Mapping SourceColumn="guest_yellow_card" DataSetColumn="guest_yellow_card" />
+              <Mapping SourceColumn="stage" DataSetColumn="stage" />
+              <Mapping SourceColumn="weather" DataSetColumn="weather" />
+              <Mapping SourceColumn="attendance" DataSetColumn="attendance" />
+              <Mapping SourceColumn="was_played" DataSetColumn="was_played" />
+              <Mapping SourceColumn="full_name" DataSetColumn="full_name" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable2TableAdapter" GeneratorDataComponentClassName="DataTable2TableAdapter" Name="DataTable2" UserDataComponentName="DataTable2TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="UEFA_leagueConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        players.player_id, players.player_name, teams.team_name, players.surname, players.number, players.age, players.nationality, players.salary_per_month
+FROM            players INNER JOIN
+                         teams ON players.team = teams.team_id</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="player_id" DataSetColumn="player_id" />
+              <Mapping SourceColumn="player_name" DataSetColumn="player_name" />
+              <Mapping SourceColumn="team_name" DataSetColumn="team_name" />
+              <Mapping SourceColumn="surname" DataSetColumn="surname" />
+              <Mapping SourceColumn="number" DataSetColumn="number" />
+              <Mapping SourceColumn="age" DataSetColumn="age" />
+              <Mapping SourceColumn="nationality" DataSetColumn="nationality" />
+              <Mapping SourceColumn="salary_per_month" DataSetColumn="salary_per_month" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -1053,6 +1136,124 @@ SELECT team_id, team_name, stadium_id, date_of_creation, budget, home_uniform, g
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="match_id" msprop:Generator_ColumnVarNameInTable="columnmatch_id" msprop:Generator_ColumnPropNameInRow="match_id" msprop:Generator_ColumnPropNameInTable="match_idColumn" msprop:Generator_UserColumnName="match_id" type="xs:int" />
+              <xs:element name="team_name" msprop:Generator_ColumnVarNameInTable="columnteam_name" msprop:Generator_ColumnPropNameInRow="team_name" msprop:Generator_ColumnPropNameInTable="team_nameColumn" msprop:Generator_UserColumnName="team_name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="match_date" msprop:Generator_ColumnVarNameInTable="columnmatch_date" msprop:Generator_ColumnPropNameInRow="match_date" msprop:Generator_ColumnPropNameInTable="match_dateColumn" msprop:Generator_UserColumnName="match_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="host_goals" msprop:Generator_ColumnVarNameInTable="columnhost_goals" msprop:Generator_ColumnPropNameInRow="host_goals" msprop:Generator_ColumnPropNameInTable="host_goalsColumn" msprop:Generator_UserColumnName="host_goals" type="xs:int" minOccurs="0" />
+              <xs:element name="guest_goals" msprop:Generator_ColumnVarNameInTable="columnguest_goals" msprop:Generator_ColumnPropNameInRow="guest_goals" msprop:Generator_ColumnPropNameInTable="guest_goalsColumn" msprop:Generator_UserColumnName="guest_goals" type="xs:int" minOccurs="0" />
+              <xs:element name="host_yellow_card" msprop:Generator_ColumnVarNameInTable="columnhost_yellow_card" msprop:Generator_ColumnPropNameInRow="host_yellow_card" msprop:Generator_ColumnPropNameInTable="host_yellow_cardColumn" msprop:Generator_UserColumnName="host_yellow_card" type="xs:int" minOccurs="0" />
+              <xs:element name="guest_yellow_card" msprop:Generator_ColumnVarNameInTable="columnguest_yellow_card" msprop:Generator_ColumnPropNameInRow="guest_yellow_card" msprop:Generator_ColumnPropNameInTable="guest_yellow_cardColumn" msprop:Generator_UserColumnName="guest_yellow_card" type="xs:int" minOccurs="0" />
+              <xs:element name="stage" msprop:Generator_ColumnVarNameInTable="columnstage" msprop:Generator_ColumnPropNameInRow="stage" msprop:Generator_ColumnPropNameInTable="stageColumn" msprop:Generator_UserColumnName="stage" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="weather" msprop:Generator_ColumnVarNameInTable="columnweather" msprop:Generator_ColumnPropNameInRow="weather" msprop:Generator_ColumnPropNameInTable="weatherColumn" msprop:Generator_UserColumnName="weather" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="attendance" msprop:Generator_ColumnVarNameInTable="columnattendance" msprop:Generator_ColumnPropNameInRow="attendance" msprop:Generator_ColumnPropNameInTable="attendanceColumn" msprop:Generator_UserColumnName="attendance" type="xs:int" minOccurs="0" />
+              <xs:element name="was_played" msprop:Generator_ColumnVarNameInTable="columnwas_played" msprop:Generator_ColumnPropNameInRow="was_played" msprop:Generator_ColumnPropNameInTable="was_playedColumn" msprop:Generator_UserColumnName="was_played" type="xs:boolean" minOccurs="0" />
+              <xs:element name="full_name" msprop:Generator_ColumnVarNameInTable="columnfull_name" msprop:Generator_ColumnPropNameInRow="full_name" msprop:Generator_ColumnPropNameInTable="full_nameColumn" msprop:Generator_UserColumnName="full_name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Pl" msprop:Generator_TableClassName="PlDataTable" msprop:Generator_TableVarName="tablePl" msprop:Generator_TablePropName="Pl" msprop:Generator_RowDeletingName="PlRowDeleting" msprop:Generator_RowChangingName="PlRowChanging" msprop:Generator_RowEvHandlerName="PlRowChangeEventHandler" msprop:Generator_RowDeletedName="PlRowDeleted" msprop:Generator_UserTableName="Pl" msprop:Generator_RowChangedName="PlRowChanged" msprop:Generator_RowEvArgName="PlRowChangeEvent" msprop:Generator_RowClassName="PlRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="player_id" msprop:Generator_ColumnVarNameInTable="columnplayer_id" msprop:Generator_ColumnPropNameInRow="player_id" msprop:Generator_ColumnPropNameInTable="player_idColumn" msprop:Generator_UserColumnName="player_id" type="xs:int" />
+              <xs:element name="player_name" msprop:Generator_ColumnVarNameInTable="columnplayer_name" msprop:Generator_ColumnPropNameInRow="player_name" msprop:Generator_ColumnPropNameInTable="player_nameColumn" msprop:Generator_UserColumnName="player_name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="surname" msprop:Generator_ColumnVarNameInTable="columnsurname" msprop:Generator_ColumnPropNameInRow="surname" msprop:Generator_ColumnPropNameInTable="surnameColumn" msprop:Generator_UserColumnName="surname" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="number" msprop:Generator_ColumnVarNameInTable="columnnumber" msprop:Generator_ColumnPropNameInRow="number" msprop:Generator_ColumnPropNameInTable="numberColumn" msprop:Generator_UserColumnName="number" type="xs:int" minOccurs="0" />
+              <xs:element name="age" msprop:Generator_ColumnVarNameInTable="columnage" msprop:Generator_ColumnPropNameInRow="age" msprop:Generator_ColumnPropNameInTable="ageColumn" msprop:Generator_UserColumnName="age" type="xs:int" minOccurs="0" />
+              <xs:element name="nationality" msprop:Generator_ColumnVarNameInTable="columnnationality" msprop:Generator_ColumnPropNameInRow="nationality" msprop:Generator_ColumnPropNameInTable="nationalityColumn" msprop:Generator_UserColumnName="nationality" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="salary_per_month" msprop:Generator_ColumnVarNameInTable="columnsalary_per_month" msprop:Generator_ColumnPropNameInRow="salary_per_month" msprop:Generator_ColumnPropNameInTable="salary_per_monthColumn" msprop:Generator_UserColumnName="salary_per_month" type="xs:decimal" minOccurs="0" />
+              <xs:element name="team_name" msprop:Generator_ColumnVarNameInTable="columnteam_name" msprop:Generator_ColumnPropNameInRow="team_name" msprop:Generator_ColumnPropNameInTable="team_nameColumn" msprop:Generator_UserColumnName="team_name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DataTable2" msprop:Generator_TableClassName="DataTable2DataTable" msprop:Generator_TableVarName="tableDataTable2" msprop:Generator_TablePropName="DataTable2" msprop:Generator_RowDeletingName="DataTable2RowDeleting" msprop:Generator_RowChangingName="DataTable2RowChanging" msprop:Generator_RowEvHandlerName="DataTable2RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable2RowDeleted" msprop:Generator_UserTableName="DataTable2" msprop:Generator_RowChangedName="DataTable2RowChanged" msprop:Generator_RowEvArgName="DataTable2RowChangeEvent" msprop:Generator_RowClassName="DataTable2Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="player_id" msprop:Generator_ColumnVarNameInTable="columnplayer_id" msprop:Generator_ColumnPropNameInRow="player_id" msprop:Generator_ColumnPropNameInTable="player_idColumn" msprop:Generator_UserColumnName="player_id" type="xs:int" />
+              <xs:element name="player_name" msprop:Generator_ColumnVarNameInTable="columnplayer_name" msprop:Generator_ColumnPropNameInRow="player_name" msprop:Generator_ColumnPropNameInTable="player_nameColumn" msprop:Generator_UserColumnName="player_name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="team_name" msprop:Generator_ColumnVarNameInTable="columnteam_name" msprop:Generator_ColumnPropNameInRow="team_name" msprop:Generator_ColumnPropNameInTable="team_nameColumn" msprop:Generator_UserColumnName="team_name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="surname" msprop:Generator_ColumnVarNameInTable="columnsurname" msprop:Generator_ColumnPropNameInRow="surname" msprop:Generator_ColumnPropNameInTable="surnameColumn" msprop:Generator_UserColumnName="surname" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="number" msprop:Generator_ColumnVarNameInTable="columnnumber" msprop:Generator_ColumnPropNameInRow="number" msprop:Generator_ColumnPropNameInTable="numberColumn" msprop:Generator_UserColumnName="number" type="xs:int" minOccurs="0" />
+              <xs:element name="age" msprop:Generator_ColumnVarNameInTable="columnage" msprop:Generator_ColumnPropNameInRow="age" msprop:Generator_ColumnPropNameInTable="ageColumn" msprop:Generator_UserColumnName="age" type="xs:int" minOccurs="0" />
+              <xs:element name="nationality" msprop:Generator_ColumnVarNameInTable="columnnationality" msprop:Generator_ColumnPropNameInRow="nationality" msprop:Generator_ColumnPropNameInTable="nationalityColumn" msprop:Generator_UserColumnName="nationality" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="salary_per_month" msprop:Generator_ColumnVarNameInTable="columnsalary_per_month" msprop:Generator_ColumnPropNameInRow="salary_per_month" msprop:Generator_ColumnPropNameInTable="salary_per_monthColumn" msprop:Generator_UserColumnName="salary_per_month" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -1074,6 +1275,18 @@ SELECT team_id, team_name, stadium_id, date_of_creation, budget, home_uniform, g
     <xs:unique name="teams_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:teams" />
       <xs:field xpath="mstns:team_id" />
+    </xs:unique>
+    <xs:unique name="DataTable1_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DataTable1" />
+      <xs:field xpath="mstns:match_id" />
+    </xs:unique>
+    <xs:unique name="Pl_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Pl" />
+      <xs:field xpath="mstns:player_id" />
+    </xs:unique>
+    <xs:unique name="DataTable2_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DataTable2" />
+      <xs:field xpath="mstns:player_id" />
     </xs:unique>
   </xs:element>
   <xs:annotation>
